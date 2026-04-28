@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Heywood Chippy – Traditional British Fish & Chips. 2 Wham Street, Heywood OL10 4QU. Call 01706 627702. Open Mon–Sat 12pm–9:30pm."/>
+  <title>Heywood Chippy | Traditional Fish &amp; Chips</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- ======================================================
+       NAVBAR
+  ====================================================== -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#" onclick="showView('home');return false;">
+        <span class="logo-main">Heywood</span>
+        <span class="logo-sub">Chippy</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#" class="nav-link active" data-view="home"    onclick="showView('home');return false;">Home</a>
+        <a href="#" class="nav-link"         data-view="about"   onclick="showView('about');return false;">About</a>
+        <a href="#" class="nav-link"         data-view="menu"    onclick="showView('menu');return false;">Menu</a>
+        <a href="#" class="nav-link"         data-view="contact" onclick="showView('contact');return false;">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile slide menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#10005;</button>
+      <a href="#" class="mobile-link" onclick="showView('home');closeMobileMenu();return false;">Home</a>
+      <a href="#" class="mobile-link" onclick="showView('about');closeMobileMenu();return false;">About</a>
+      <a href="#" class="mobile-link" onclick="showView('menu');closeMobileMenu();return false;">Menu</a>
+      <a href="#" class="mobile-link" onclick="showView('contact');closeMobileMenu();return false;">Contact</a>
+      <div class="mobile-menu-footer">
+        <p>📞 01706 627702</p>
+        <p>📍 2 Wham Street, Heywood</p>
+        <p>🕛 Mon–Sat: 12pm – 9:30pm</p>
+      </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+  </header>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">&#8593;</button>
+
+
+  <!-- ======================================================
+       VIEW: HOME
+  ====================================================== -->
+  <div id="view-home" class="view active">
+
+    <!--
+      HOME HERO BACKGROUND IMAGE
+      File: images/hero-main.jpg
+      Use: background-image in CSS (.hero class)
+      Description: Overhead or slight-angle shot of golden battered cod
+      with thick-cut chips on white paper/newspaper wrapping. Warm, moody
+      lighting. No people. Landscape ~2000×1200px.
+      Unsplash source (placeholder): https://images.unsplash.com/photo-1544025162-d76694265947?w=1920&q=80
+    -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Heywood, Greater Manchester</p>
+        <h1 class="hero-title">
+          <span>Heywood</span>
+          <span class="accent">Chippy</span>
+        </h1>
+        <p class="hero-tagline">Proper British fish &amp; chips.<br>Made fresh. Served proud.</p>
+        <div class="hero-cta-group">
+          <button class="btn btn-gold" onclick="showView('menu')">View Our Menu</button>
+          <a class="btn btn-outline-white" href="tel:01706627702">📞 Call to Order</a>
+        </div>
+        <div class="hero-badge">
+          <span class="badge-star">★</span>
+          Free delivery under 3 miles on orders over £15
+        </div>
+      </div>
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Info strip -->
+    <section class="info-strip">
+      <div class="strip-inner">
+        <div class="strip-item">
+          <span class="si-icon">🐟</span>
+          <div><strong>Fresh Fish Daily</strong><p>Battered to order, every time</p></div>
+        </div>
+        <span class="strip-div"></span>
+        <div class="strip-item">
+          <span class="si-icon">📞</span>
+          <div><strong>Order by Phone</strong><p>01706 627702</p></div>
+        </div>
+        <span class="strip-div"></span>
+        <div class="strip-item">
+          <span class="si-icon">🕛</span>
+          <div><strong>Open 6 Days</strong><p>12pm – 9:30pm | Sun Closed</p></div>
+        </div>
+        <span class="strip-div"></span>
+        <div class="strip-item">
+          <span class="si-icon">🚗</span>
+          <div><strong>Free Delivery</strong><p>Under 3 miles, orders over £15</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      HOME SECONDARY PARALLAX BACKGROUND IMAGE
+      File: images/hero-signature.jpg
+      Use: background-image in CSS (.signature-section class)
+      Description: Classic British fish and chips — battered cod + thick
+      chips on newspaper or white paper. No pizza, no other food.
+      Warm editorial tones. No people. ~2000×1100px.
+      Unsplash placeholder: https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=1920&q=80
+    -->
+    <section class="signature-section">
+      <div class="hero-overlay overlay-deep"></div>
+      <div class="sig-content">
+        <h2 class="section-title light">A Heywood Institution</h2>
+        <p class="section-sub light">Serving the community with pride.<br>Real ingredients. Real flavour. Real Heywood.</p>
+        <button class="btn btn-gold" onclick="showView('about')">Our Story</button>
+      </div>
+    </section>
+
+    <!-- Featured menu cards -->
+    <section class="featured-section">
+      <div class="container">
+        <p class="eyebrow-label">FROM THE MENU</p>
+        <h2 class="section-title">Customer Favourites</h2>
+
+        <div class="featured-grid">
+
+          <!-- CARD: Fish & Chips
+               File: images/fish-and-chips.jpg
+               Description: Actual battered golden cod fillet on a bed of
+               thick-cut chips. 45° angle, steam visible, warm lighting.
+               No people. ~800×600px.
+               Unsplash placeholder: https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=800&q=80
+          -->
+          <div class="feat-card">
+            <div class="feat-img-wrap">
+              <img src="images/fish-and-chips.jpg" alt="Battered cod with thick-cut chips"/>
+              <div class="feat-img-overlay"></div>
+            </div>
+            <div class="feat-body">
+              <h3>Fish with Chips</h3>
+              <p>Classic battered cod with thick-cut chips</p>
+              <span class="feat-price">£6.00</span>
+            </div>
+          </div>
+
+          <!-- CARD: Mixed Kebab
+               File: images/mixed-kebab.jpg
+               Description: Mixed donner and chicken tikka kebab in a
+               pitta or naan. Overhead or slight angle. Dark board.
+               No people. ~800×600px.
+               Unsplash placeholder: https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=80
+          -->
+          <div class="feat-card">
+            <div class="feat-img-wrap">
+              <img src="images/mixed-kebab.jpg" alt="Mixed kebab in pitta"/>
+              <div class="feat-img-overlay"></div>
+            </div>
+            <div class="feat-body">
+              <h3>Mixed Kebab</h3>
+              <p>Donner &amp; chicken tikka in pitta, naan, or tray</p>
+              <span class="feat-price">£6.00</span>
+            </div>
+          </div>
+
+          <!-- CARD: Family Special
+               File: images/family-special.jpg
+               Description: Overhead flat-lay of fish portions, chips,
+               peas, gravy pot and curry sauce on newspaper/paper wrapping.
+               Generous feel. No people, no pizza. ~800×600px.
+               Unsplash placeholder: https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80
+          -->
+          <div class="feat-card feat-card--gold">
+            <div class="feat-img-wrap">
+              <img src="images/family-special.jpg" alt="Family special feast with fish, chips, peas and sauces"/>
+              <div class="feat-img-overlay"></div>
+            </div>
+            <span class="feat-badge">Best Value</span>
+            <div class="feat-body">
+              <h3>Family Special</h3>
+              <p>x4 Fish, x2 Large Chips, Peas, Gravy, Curry &amp; 1.5ltr Pepsi</p>
+              <span class="feat-price">£25.00</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:2.5rem;">
+          <button class="btn btn-navy" onclick="showView('menu')">See Full Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to Order?</h2>
+          <p>All orders taken via phone or in-shop only.</p>
+        </div>
+        <a class="btn btn-gold btn-lg" href="tel:01706627702">📞 01706 627702</a>
+      </div>
+    </section>
+
+  </div>
+  <!-- /view-home -->
+
+
+  <!-- ======================================================
+       VIEW: ABOUT
+  ====================================================== -->
+  <div id="view-about" class="view">
+
+    <!--
+      ABOUT HERO BACKGROUND IMAGE
+      File: images/hero-main.jpg  ← SAME AS HOME HERO
+      Use: background-image in CSS (.parallax-about class)
+      Same image as home page hero. No change needed.
+    -->
+    <section class="page-hero parallax-about">
+      <div class="hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="hero-eyebrow">Our Story</p>
+        <h1 class="page-hero-title">About Us</h1>
+      </div>
+    </section>
+
+    <!-- About body -->
+    <section class="about-section">
+      <div class="container container--narrow">
+        <p class="eyebrow-label">Heywood, Greater Manchester</p>
+        <h2 class="section-title">Proud to Serve<br>Our Community</h2>
+        <div class="about-text">
+          <p>Heywood Chippy sits right at the heart of the local community. Based on Wham Street, we've built our name on one simple promise — proper food, made properly.</p>
+          <p>Everything we serve is prepared fresh. Our fish is battered to order, our chips are cooked to perfection, and every meal that leaves our counter is something we're genuinely proud to put our name to.</p>
+          <p>We're not a chain. We're not a franchise. We're your local chippy — and that means something to us. When you walk through our door or pick up the phone, you're supporting a local Heywood business that genuinely cares about what it serves and who it serves it to.</p>
+          <p>From classic fish suppers to kebabs, burgers, and our incredible Family Special, there's something for everyone. Come see us — or give us a ring.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Days a Week</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">3<small>mi</small></span>
+            <span class="stat-label">Free Delivery Radius</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">100<small>%</small></span>
+            <span class="stat-label">Fresh to Order</span>
+          </div>
+        </div>
+        <div class="about-cta-row">
+          <button class="btn btn-navy" onclick="showView('menu')">View Menu</button>
+          <button class="btn btn-outline-navy" onclick="showView('contact')">Contact Us</button>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      ABOUT QUOTE PARALLAX BACKGROUND IMAGE
+      File: images/about-values.jpg
+      Use: background-image in CSS (.parallax-values class)
+      Description: Overhead or close-up of hands wrapping chippy food in
+      white paper. Warm lighting, shallow depth of field. No faces shown.
+      ~2000×900px.
+      Unsplash placeholder: https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920&q=80
+    -->
+    <section class="parallax-values">
+      <div class="hero-overlay overlay-navy"></div>
+      <div class="quote-content">
+        <blockquote>"Fresh fish. Proper chips. A friendly face.<br>That's Heywood Chippy."</blockquote>
+      </div>
+    </section>
+
+    <!-- Values grid -->
+    <section class="values-section">
+      <div class="container">
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="val-icon">🐟</div>
+            <h3>Fresh Daily</h3>
+            <p>Fish sourced fresh and battered to order. Never frozen, never compromised.</p>
+          </div>
+          <div class="value-card">
+            <div class="val-icon">🏘️</div>
+            <h3>Local at Heart</h3>
+            <p>A proper Heywood business. We know our customers and we care about them.</p>
+          </div>
+          <div class="value-card">
+            <div class="val-icon">🍟</div>
+            <h3>Made to Order</h3>
+            <p>Nothing sits under a lamp. Every portion is cooked fresh when you ask.</p>
+          </div>
+          <div class="value-card">
+            <div class="val-icon">💷</div>
+            <h3>Honest Prices</h3>
+            <p>Real portions at fair prices. No gimmicks, no upselling — just good value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- /view-about -->
+
+
+  <!-- ======================================================
+       VIEW: MENU
+  ====================================================== -->
+  <div id="view-menu" class="view">
+
+    <!--
+      MENU HERO BACKGROUND IMAGE
+      File: images/hero-main.jpg  ← SAME AS HOME HERO
+      Use: background-image in CSS (.parallax-menu class)
+      Same image as home page hero. No separate image needed.
+    -->
+    <section class="page-hero parallax-menu">
+      <div class="hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="hero-eyebrow">What We Serve</p>
+        <h1 class="page-hero-title">Our Menu</h1>
+      </div>
+    </section>
+
+    <!-- Order notice banner -->
+    <div class="order-notice">
+      <div class="notice-inner">
+        <span class="notice-icon">📞</span>
+        <div>
+          <strong>All orders are taken via phone or in-shop only.</strong>
+          <p>Please call <a href="tel:01706627702">01706 627702</a> to place your order. We do not take online orders.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu layout -->
+    <div class="menu-layout">
+
+      <!-- Sidebar -->
+      <aside class="menu-sidebar" id="menuSidebar">
+        <p class="sidebar-label">Categories</p>
+        <nav class="sidebar-nav">
+          <a class="sidebar-link active" data-target="cat-special" href="#cat-special">⭐ Special Offer</a>
+          <a class="sidebar-link" data-target="cat-fish"    href="#cat-fish">🐟 Fish</a>
+          <a class="sidebar-link" data-target="cat-chips"   href="#cat-chips">🍟 Chips</a>
+          <a class="sidebar-link" data-target="cat-sausage" href="#cat-sausage">🌭 Sausage &amp; Pies</a>
+          <a class="sidebar-link" data-target="cat-kebabs"  href="#cat-kebabs">🥙 Kebabs</a>
+          <a class="sidebar-link" data-target="cat-burgers" href="#cat-burgers">🍔 Burgers</a>
+          <a class="sidebar-link" data-target="cat-kids"    href="#cat-kids">🧒 Kids Meal</a>
+        </nav>
+        <div class="sidebar-cta">
+          <p>Ready to order?</p>
+          <a class="btn btn-gold btn-sm" href="tel:01706627702">Call Now</a>
+        </div>
+      </aside>
+
+      <!-- Menu content -->
+      <main class="menu-main">
+
+        <!-- Special Offer -->
+        <section class="menu-section" id="cat-special">
+          <div class="msec-header msec-header--special">
+            <span class="msec-icon">⭐</span>
+            <div><h2>Special Offer</h2><p>Best value in Heywood</p></div>
+          </div>
+          <div class="special-card">
+            <div class="special-items">
+              <h3>Family Feast</h3>
+              <ul class="special-list">
+                <li>x4 Fish</li><li>x2 Large Chips</li><li>x1 Peas</li>
+                <li>x1 Gravy</li><li>x1 Curry</li><li>1.5 ltr Pepsi</li>
+              </ul>
+            </div>
+            <div class="special-price-block">
+              <span class="special-price">£25</span>
+              <span class="special-note">Whole family sorted</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fish -->
+        <section class="menu-section" id="cat-fish">
+          <div class="msec-header">
+            <span class="msec-icon">🐟</span>
+            <div><h2>Fish</h2><p>Freshly battered to order</p></div>
+          </div>
+          <div class="items-list">
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Small Cod</span><span class="mi-desc">Classic battered small cod fillet</span></div><span class="mi-price">£4.50</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Fish with Chips</span><span class="mi-desc">Battered cod fillet served with chips</span></div><span class="mi-price">£6.00</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Fish Cake</span><span class="mi-desc">Traditional fish cake, golden &amp; crispy</span></div><span class="mi-price">£1.50</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">12 Scampi</span><span class="mi-desc">Twelve crispy battered scampi pieces</span></div><span class="mi-price">£4.00</span></div>
+            <div class="menu-item mi-featured"><div class="mi-info"><span class="mi-name">Masala Fish</span><span class="mi-desc">Masala-spiced fish with chips &amp; naan</span></div><span class="mi-price">£6.00</span></div>
+          </div>
+        </section>
+
+        <!-- Chips -->
+        <section class="menu-section menu-section--alt" id="cat-chips">
+          <div class="msec-header">
+            <span class="msec-icon">🍟</span>
+            <div><h2>Chips</h2><p>Thick-cut, cooked fresh</p></div>
+          </div>
+          <div class="items-list">
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Cone</span><span class="mi-desc">Small cone of chips</span></div><span class="mi-price">£1.50</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Small Chips</span><span class="mi-desc">A solid portion of freshly cooked chips</span></div><span class="mi-price">£2.40</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Large Chips</span><span class="mi-desc">Generous large portion of chips</span></div><span class="mi-price">£3.50</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Cheese &amp; Chips</span><span class="mi-desc">Chips smothered in melted cheese</span></div><span class="mi-price">£3.20</span></div>
+          </div>
+        </section>
+
+        <!-- Sausage & Pies -->
+        <section class="menu-section" id="cat-sausage">
+          <div class="msec-header">
+            <span class="msec-icon">🌭</span>
+            <div><h2>Sausage &amp; Pies</h2><p>British classics done right</p></div>
+          </div>
+          <div class="items-list">
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Small Sausage</span><span class="mi-desc">Classic battered small sausage</span></div><span class="mi-price">£1.00</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Jumbo Battered Sausage</span><span class="mi-desc">Full-size battered jumbo sausage</span></div><span class="mi-price">£3.50</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Holland Pie</span><span class="mi-desc">Classic Holland pie, a Northern staple</span></div><span class="mi-price">£2.50</span></div>
+          </div>
+        </section>
+
+        <!-- Kebabs -->
+        <section class="menu-section menu-section--alt" id="cat-kebabs">
+          <div class="msec-header">
+            <span class="msec-icon">🥙</span>
+            <div><h2>Kebabs</h2><p>Served in pitta, naan, or tray</p></div>
+          </div>
+          <div class="items-list">
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Donner Kebab</span><span class="mi-desc">Classic donner meat in pitta, naan, or tray</span></div><span class="mi-price">£5.00</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">Chicken Tikka Kebab</span><span class="mi-desc">Tender chicken tikka in pitta, naan, or tray</span></div><span class="mi-price">£5.00</span></div>
+            <div class="menu-item mi-featured"><div class="mi-info"><span class="mi-name">Mixed Kebab</span><span class="mi-desc">Donner &amp; chicken tikka in pitta, naan, or tray</span></div><span class="mi-price">£6.00</span></div>
+          </div>
+        </section>
+
+        <!-- Burgers -->
+        <section class="menu-section" id="cat-burgers">
+          <div class="msec-header">
+            <span class="msec-icon">🍔</span>
+            <div><h2>Burgers</h2><p>Proper burgers, proper portions</p></div>
+          </div>
+          <div class="items-list">
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">¼ Burger</span><span class="mi-desc">Quarter-pound burger in a bun</span></div><span class="mi-price">£3.50</span></div>
+            <div class="menu-item"><div class="mi-info"><span class="mi-name">½ Burger</span><span class="mi-desc">Half-pound burger in a bun</span></div><span class="mi-price">£4.50</span></div>
+            <div class="menu-item mi-featured"><div class="mi-info"><span class="mi-name">Salt &amp; Pepper Chicken &amp; Chips</span><span class="mi-desc">Crispy salt &amp; pepper chicken strips with chips</span></div><span class="mi-price">£5.50</span></div>
+          </div>
+        </section>
+
+        <!-- Kids Meal -->
+        <section class="menu-section menu-section--alt" id="cat-kids">
+          <div class="msec-header">
+            <span class="msec-icon">🧒</span>
+            <div><h2>Kids Meal</h2><p>All with chips &amp; a pop</p></div>
+          </div>
+          <div class="kids-card">
+            <div class="kids-price-block">
+              <span class="kids-price">£3.50</span>
+              <span class="kids-per">per meal</span>
+            </div>
+            <div class="kids-options">
+              <p class="kids-choose">Choose one main:</p>
+              <div class="kids-choices">
+                <span class="kids-tag">Small Sausage</span>
+                <span class="kids-tag">Fish Cake</span>
+                <span class="kids-tag">x4 Nuggets</span>
+              </div>
+              <p class="kids-note">All meals include chips &amp; a pop</p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+  </div>
+  <!-- /view-menu -->
+
+
+  <!-- ======================================================
+       VIEW: CONTACT
+  ====================================================== -->
+  <div id="view-contact" class="view">
+
+    <!--
+      CONTACT HERO BACKGROUND IMAGE
+      File: images/contact-hero.jpg
+      Use: background-image in CSS (.parallax-contact class)
+      Description: Generic communication-themed flat lay. A classic black
+      corded/vintage telephone or a phone + envelope + notepad on a dark
+      surface. No people, no faces. Navy/dark tones preferred. ~2000×900px.
+      Unsplash placeholder (vintage phone, no people, free to use):
+      https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=1920&q=80
+    -->
+    <section class="page-hero parallax-contact">
+      <div class="hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="hero-eyebrow">Get in Touch</p>
+        <h1 class="page-hero-title">Contact Us</h1>
+      </div>
+    </section>
+
+    <!-- Contact body -->
+    <section class="contact-section">
+      <div class="contact-wrapper">
+
+        <!-- LEFT 40%: Form + info -->
+        <div class="contact-left">
+
+          <div class="contact-form-wrap">
+            <h2 class="contact-heading">Send Us a Message</h2>
+            <p class="contact-sub">For orders please call us. This form is for general enquiries only.</p>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. John Smith" required/>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required/>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-navy btn-full">Send Message</button>
+              <div class="form-success" id="formSuccess">✓ Thanks! We'll get back to you soon.</div>
+            </form>
+          </div>
+
+          <div class="contact-info-list">
+            <div class="ci-item">
+              <span class="ci-icon">📍</span>
+              <div>
+                <strong>Address</strong>
+                <p>2 Wham Street<br/>Heywood, OL10 4QU</p>
+              </div>
+            </div>
+            <div class="ci-item">
+              <span class="ci-icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p><a href="tel:01706627702">01706 627702</a></p>
+              </div>
+            </div>
+            <div class="ci-item">
+              <span class="ci-icon">🕛</span>
+              <div>
+                <strong>Opening Hours</strong>
+                <p>Monday – Saturday: 12:00pm – 9:30pm</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+            <div class="ci-item">
+              <span class="ci-icon">🚗</span>
+              <div>
+                <strong>Delivery</strong>
+                <p>Free within 3 miles on orders over £15</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT 60%: Map card -->
+        <div class="contact-right">
+          <div class="map-card">
+            <div class="map-card-header">
+              <span>📍</span>
+              <div>
+                <strong>Find Us</strong>
+                <p>2 Wham Street, Heywood, OL10 4QU</p>
+              </div>
+            </div>
+            <div class="map-frame">
+              <!--
+                GOOGLE MAPS EMBED
+                To get your real embed:
+                1. Go to maps.google.com
+                2. Search "2 Wham Street Heywood OL10 4QU"
+                3. Click Share > Embed a map
+                4. Copy the iframe src URL
+                5. Replace the src value below with your real URL
+              -->
+              <iframe
+                title="Heywood Chippy on Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2372.5!2d-2.2185!3d53.5908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ba4cd8f6cbdb1%3A0xf56be32a5c52f82a!2s2%20Wham%20St%2C%20Heywood%20OL10%204QU%2C%20UK!5e0!3m2!1sen!2suk!4v1700000000000"
+                width="100%" height="100%"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="map-card-footer">
+              <div class="mcf-row"><span>🕛</span><span>Mon–Sat: 12pm – 9:30pm &nbsp;|&nbsp; Sunday: Closed</span></div>
+              <div class="mcf-row"><span>📞</span><a href="tel:01706627702">01706 627702</a></div>
+              <a class="btn btn-navy btn-sm" href="https://maps.google.com/?q=2+Wham+Street+Heywood+OL10+4QU" target="_blank" rel="noopener">Get Directions ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <!-- /view-contact -->
+
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="f-logo">Heywood Chippy</span>
+        <p>2 Wham Street, Heywood, OL10 4QU</p>
+        <a href="tel:01706627702">01706 627702</a>
+      </div>
+      <div class="footer-nav">
+        <a href="#" onclick="showView('home');return false;">Home</a>
+        <a href="#" onclick="showView('about');return false;">About</a>
+        <a href="#" onclick="showView('menu');return false;">Menu</a>
+        <a href="#" onclick="showView('contact');return false;">Contact</a>
+      </div>
+      <div class="footer-hours">
+        <strong>Opening Hours</strong>
+        <p>Mon – Sat: 12:00pm – 9:30pm</p>
+        <p>Sunday: Closed</p>
+        <p style="margin-top:.5rem;color:var(--gold);font-size:.82rem;">Free delivery under 3 miles over £15</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2025 Heywood Chippy. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
