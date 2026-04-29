@@ -28,9 +28,8 @@
   --r:         10px;
   --rl:        18px;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background-color:#0d1f3c}
 body{font-family:var(--fb);background:var(--off-white);color:var(--charcoal);font-size:16px;line-height:1.7;overflow-x:hidden}
-html{scroll-behavior:smooth;background:#0d1f3c}
 img{display:block;max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 
