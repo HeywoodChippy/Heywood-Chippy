@@ -30,7 +30,7 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--off-white);color:var(--charcoal);font-size:16px;line-height:1.7;overflow-x:hidden}
-img{display:block;max-width:100%;height:auto}
+html{scroll-behavior:smooth;background:#0d1f3c}img{display:block;max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 
 /* ======================================================
@@ -46,14 +46,15 @@ a{text-decoration:none;color:inherit}
 #navbar{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   transition:var(--t),box-shadow .3s ease;
-  overflow:visible;  /* CRITICAL — lets dropdown render outside navbar bounds */
+  overflow:visible;
 }
 #navbar.scrolled{
   background:rgba(13,31,60,.96);
   backdrop-filter:blur(14px);
   box-shadow:0 2px 24px rgba(0,0,0,.35);
 }
-#navbar.hidden{transform:translateY(-100%)}
+/* Navbar stays put — remove the hide-on-scroll behaviour */
+#navbar.hidden{transform:none}
 
 .nav-inner{
   max-width:1280px;margin:0 auto;padding:0 2rem;
