@@ -30,7 +30,8 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--off-white);color:var(--charcoal);font-size:16px;line-height:1.7;overflow-x:hidden}
-html{scroll-behavior:smooth;background:#0d1f3c}img{display:block;max-width:100%;height:auto}
+html{scroll-behavior:smooth;background:#0d1f3c}
+img{display:block;max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 
 /* ======================================================
