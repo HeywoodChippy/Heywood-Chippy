@@ -456,7 +456,7 @@ blockquote{
 .msec-header--special h2,.msec-header--special p{color:var(--white)}
 .msec-header--special p{opacity:.7}
 .msec-icon{font-size:1.9rem;flex-shrink:0}
-.msec-header h2{font-family:var(--fd);font-size:1.55rem;font-weight:700;color:var(--navy);line-height:1.1}
+.msec-header h2{font-family:var(--fd);font-size:1.55rem;font-weight:700;color:var(--gold);line-height:1.1}
 .msec-header p{font-size:.83rem;color:var(--grey);margin-top:.18rem}
 
 .special-card{
