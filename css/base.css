@@ -1,0 +1,156 @@
+/* ==============================================
+   HEYWOOD CHIPPY — base.css
+   Variables · Reset · Typography · Utilities · Buttons
+   ============================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ticker-h:  30px;
+  --nav-h:     70px;
+  --navy:      #0d1f3c;
+  --navy-mid:  #162d56;
+  --navy-lt:   #1e3d6e;
+  --gold:      #c9a84c;
+  --gold-lt:   #e2c070;
+  --gold-dk:   #a07c30;
+  --cream:     #f8f6f0;
+  --off-white: #fdfcf8;
+  --charcoal:  #1a1a2e;
+  --slate:     #2c3e50;
+  --grey:      #6b7280;
+  --lgrey:     #e5e7eb;
+  --white:     #ffffff;
+  --fd: 'Playfair Display', Georgia, serif;
+  --fb: 'Raleway', sans-serif;
+  --sh: 0 4px 24px rgba(13,31,60,.10);
+  --sc: 0 8px 32px rgba(13,31,60,.14);
+  --sl: 0 20px 48px rgba(13,31,60,.22);
+  --sg: 0 8px 28px rgba(201,168,76,.32);
+  --t:  all 0.3s ease;
+  --r:  10px;
+  --rl: 18px;
+}
+
+html { scroll-behavior: smooth; background: var(--navy); }
+
+body {
+  font-family: var(--fb);
+  background: var(--off-white);
+  color: var(--charcoal);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  animation: pageFadeIn 0.5s ease both;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body.page-exit {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a   { text-decoration: none; color: inherit; }
+
+/* ── Scroll Progress ── */
+#scrollProgress {
+  position: fixed; top: 0; left: 0;
+  height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-lt), var(--gold));
+  z-index: 9999; transition: width 0.08s linear;
+  pointer-events: none;
+}
+
+/* ── Scroll to Top ── */
+#scrollTop {
+  position: fixed;
+  bottom: 2rem; right: 1.5rem;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--navy); color: var(--gold);
+  border: 2px solid var(--gold); font-size: 1.3rem; cursor: pointer;
+  /* Hidden by default — fades & slides in when .visible is added by JS */
+  opacity: 0;
+  transform: translateY(24px) scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(.34,1.56,.64,1), background 0.25s ease, box-shadow 0.25s ease;
+  z-index: 800;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--sc);
+}
+#scrollTop.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+#scrollTop:hover {
+  background: var(--gold); color: var(--navy);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: var(--sg);
+}
+/* On mobile, float above the sticky call bar */
+@media (max-width: 768px) {
+  #scrollTop { bottom: 5.5rem; right: 1rem; width: 46px; height: 46px; font-size: 1.1rem; }
+}
+
+/* ── Layout ── */
+.container         { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+.container--narrow { max-width: 860px;  margin: 0 auto; padding: 0 2rem; }
+
+/* ── Typography ── */
+.eyebrow-label {
+  font-size: .7rem; font-weight: 700; letter-spacing: .24em;
+  text-transform: uppercase; color: var(--gold-dk); margin-bottom: .8rem;
+}
+.section-title {
+  font-family: var(--fd);
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  font-weight: 900; color: var(--navy); line-height: 1.12; margin-bottom: 1.4rem;
+}
+.section-title.light { color: var(--white); }
+.section-sub  { font-size: 1.02rem; color: var(--grey); margin-bottom: 2.2rem; line-height: 1.85; }
+.section-sub.light { color: rgba(255,255,255,.78); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  font-family: var(--fb); font-size: .83rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .12em;
+  padding: .85rem 2rem; border-radius: var(--r);
+  border: 2px solid transparent; cursor: pointer; transition: var(--t); white-space: nowrap;
+}
+.btn-gold            { background: var(--gold);  color: var(--navy);  border-color: var(--gold); }
+.btn-gold:hover      { background: var(--gold-lt); border-color: var(--gold-lt); transform: translateY(-3px); box-shadow: var(--sg); }
+.btn-navy            { background: var(--navy);  color: var(--white); border-color: var(--navy); }
+.btn-navy:hover      { background: var(--navy-lt); border-color: var(--navy-lt); transform: translateY(-3px); box-shadow: var(--sc); }
+.btn-outline-white   { background: transparent; color: var(--white); border-color: rgba(255,255,255,.7); }
+.btn-outline-white:hover { background: rgba(255,255,255,.12); border-color: var(--white); transform: translateY(-3px); }
+.btn-outline-navy    { background: transparent; color: var(--navy); border-color: var(--navy); }
+.btn-outline-navy:hover  { background: var(--navy); color: var(--white); transform: translateY(-3px); box-shadow: var(--sc); }
+.btn:active { transform: translateY(-1px) scale(.98); }
+.btn-full { width: 100%; }
+.btn-sm   { font-size: .75rem; padding: .6rem 1.2rem; }
+.btn-lg   { font-size: .95rem; padding: 1rem 2.6rem; }
+
+/* ── Overlay Utility ── */
+.hero-overlay  { position: absolute; inset: 0; }
+.overlay-deep  { background: linear-gradient(to bottom, rgba(13,31,60,.58), rgba(13,31,60,.76)); }
+.overlay-navy  { background: rgba(13,31,60,.82); }
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.in-view  { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.08s; }
+.reveal-d2 { transition-delay: 0.16s; }
+.reveal-d3 { transition-delay: 0.24s; }
+.reveal-d4 { transition-delay: 0.32s; }
+.reveal-d5 { transition-delay: 0.40s; }

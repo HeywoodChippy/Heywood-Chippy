@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About Heywood Chippy – Your local chippy at 2 Wham Street, Heywood. Fresh fish, made to order, honest prices. A proper Heywood institution."/>
+  <title>About Us – Heywood Chippy</title>
+  <link rel="icon" type="image/png" href="images/Adobe Express - file.png"/>
+  <meta name="theme-color" content="#0d1f3c"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/about.css"/>
+</head>
+<body>
+
+  <div id="scrollProgress"></div>
+
+  <!-- Ticker -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-text">🐟 Fresh Fish Battered to Order &nbsp;•&nbsp; 📞 01706 627702 &nbsp;•&nbsp; 🚗 Free Delivery on Orders Over £15 (Under 3 Miles) &nbsp;•&nbsp; 🕛 Open Mon–Sat 12pm–9:00pm &nbsp;•&nbsp; 📍 2 Wham Street, Heywood &nbsp;•&nbsp; ⭐ Family Feast £25 – Best Value in Heywood &nbsp;•&nbsp;&nbsp;&nbsp;</span>
+      <span class="ticker-text" aria-hidden="true">🐟 Fresh Fish Battered to Order &nbsp;•&nbsp; 📞 01706 627702 &nbsp;•&nbsp; 🚗 Free Delivery on Orders Over £15 (Under 3 Miles) &nbsp;•&nbsp; 🕛 Open Mon–Sat 12pm–9:00pm &nbsp;•&nbsp; 📍 2 Wham Street, Heywood &nbsp;•&nbsp; ⭐ Family Feast £25 – Best Value in Heywood &nbsp;•&nbsp;&nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <img src="images/Adobe Express - file.png" alt="Heywood Chippy" class="nav-logo-img"/>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html"   class="nav-link">Home</a>
+        <a href="about.html"   class="nav-link active">About</a>
+        <a href="menu.html"    class="nav-link">Menu</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="open-badge" id="openBadge">
+          <span class="open-dot"></span>
+          <span class="open-text">Open Now</span>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="index.html"   class="mobile-link">Home</a>
+      <a href="about.html"   class="mobile-link">About</a>
+      <a href="menu.html"    class="mobile-link">Menu</a>
+      <a href="contact.html" class="mobile-link">Contact</a>
+      <div class="mobile-menu-footer">
+        <p>📞 01706 627702</p>
+        <p>📍 2 Wham Street, Heywood</p>
+        <p>🕛 Mon–Sat: 12pm – 9:00pm</p>
+      </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <button id="scrollTop" aria-label="Back to top">↑</button>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero parallax-about">
+      <div class="hero-overlay"></div>
+      <div class="page-hero-content">
+        <p class="page-hero-eyebrow">Our Story</p>
+        <h1 class="page-hero-title">About Us</h1>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- Left: story text -->
+          <div>
+            <p class="eyebrow-label reveal">Heywood, Greater Manchester</p>
+            <h2 class="section-title reveal">Proud to Serve<br>Our Community</h2>
+            <div class="about-text">
+              <p class="reveal reveal-d1">Heywood Chippy sits right at the heart of the local community. Based on Wham Street, we've built our name on one simple promise — proper food, made properly.</p>
+              <p class="reveal reveal-d2">Everything we serve is prepared fresh. Our fish is battered to order, our chips are cooked to perfection, and every meal that leaves our counter is something we're genuinely proud to put our name to.</p>
+              <p class="reveal reveal-d3">We're not a chain. We're not a franchise. We're your local chippy — and that means something to us. When you walk through our door or pick up the phone, you're supporting a local Heywood business that genuinely cares about what it serves and who it serves it to.</p>
+              <p class="reveal reveal-d4">From classic fish suppers to kebabs, burgers, and our incredible Family Feast, there's something for everyone at a price that won't break the bank.</p>
+            </div>
+          </div>
+
+          <!-- Right: stats + highlight + CTA -->
+          <div class="about-right">
+
+            <div class="about-stats">
+              <div class="stat-card reveal">
+                <span class="stat-num" data-target="6">6</span>
+                <span class="stat-label">Days a Week</span>
+              </div>
+              <div class="stat-card reveal reveal-d1">
+                <span class="stat-num" data-target="3">3</span>
+                <span class="stat-label">Mile Free Delivery</span>
+              </div>
+              <div class="stat-card reveal reveal-d2">
+                <span class="stat-num" data-target="100" data-suffix="%">100%</span>
+                <span class="stat-label">Fresh to Order</span>
+              </div>
+            </div>
+
+            <div class="about-highlight reveal">
+              <p>"We know our customers by name. That's what being a local chippy is all about — real food, real people, real Heywood."</p>
+              <cite>— Heywood Chippy</cite>
+            </div>
+
+            <div class="about-cta-row reveal">
+              <a class="btn btn-navy" href="menu.html">View Menu</a>
+              <a class="btn btn-outline-navy" href="contact.html">Contact Us</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE PARALLAX -->
+    <section class="parallax-values">
+      <div class="hero-overlay overlay-navy"></div>
+      <div class="quote-content">
+        <blockquote class="reveal">Fresh fish. Proper chips. A friendly face.<br>That's Heywood Chippy.</blockquote>
+      </div>
+    </section>
+
+    <!-- VALUES GRID -->
+    <section class="values-section">
+      <div class="container">
+        <p class="eyebrow-label reveal" style="text-align:center">What We Stand For</p>
+        <h2 class="section-title reveal" style="text-align:center">Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <div class="val-icon">🐟</div>
+            <h3>Fresh Daily</h3>
+            <p>Fish sourced fresh and battered to order. Never frozen, never compromised.</p>
+          </div>
+          <div class="value-card reveal reveal-d1">
+            <div class="val-icon">🏘️</div>
+            <h3>Local at Heart</h3>
+            <p>A proper Heywood business. We know our customers and we genuinely care about them.</p>
+          </div>
+          <div class="value-card reveal reveal-d2">
+            <div class="val-icon">🍟</div>
+            <h3>Made to Order</h3>
+            <p>Nothing sits under a lamp. Every portion is cooked fresh when you ask.</p>
+          </div>
+          <div class="value-card reveal reveal-d3">
+            <div class="val-icon">💷</div>
+            <h3>Honest Prices</h3>
+            <p>Real portions at fair prices. No gimmicks, no upselling — just good value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="f-logo">Heywood Chippy</span>
+        <p>2 Wham Street, Heywood, OL10 4QU</p>
+        <a href="tel:01706627702">01706 627702</a>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-hours">
+        <strong>Opening Hours</strong>
+        <p>Monday – Saturday: 12:00pm – 9:00pm</p>
+        <p>Sunday: Closed</p>
+        <p class="footer-delivery">Free delivery under 3 miles on orders over £15</p>
+      </div>
+    </div>
+    <div class="footer-base">© 2026 Heywood Chippy. All rights reserved.</div>
+  </footer>
+
+  <div class="mobile-cta-bar" id="mobileCta">
+    <a href="tel:01706627702" class="btn btn-gold">📞 Call to Order</a>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
