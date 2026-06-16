@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{if(sessionStorage.getItem('hc-intro'))document.documentElement.classList.add('intro-seen');}catch(e){}</script>
+  <title>Contact Us – Heywood Chippy</title>
+  <meta name="description" content="2 Wham Street, Heywood OL10 4QU. Call 01706 627702. Open Mon–Sat 12pm–9pm.">
+  <link rel="canonical" href="https://heywoodchippy.co.uk/contact.html">
+  <link rel="icon" href="images/favicon.PNG" type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Heywood Chippy">
+  <meta property="og:title" content="Contact Us – Heywood Chippy">
+  <meta property="og:description" content="2 Wham Street, Heywood OL10 4QU. Call 01706 627702. Open Mon–Sat 12pm–9pm.">
+  <meta property="og:image" content="https://heywoodchippy.co.uk/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="design-system.css">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="effects.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FastFoodRestaurant",
+    "name": "Heywood Chippy",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2 Wham Street",
+      "addressLocality": "Heywood",
+      "addressRegion": "Greater Manchester",
+      "postalCode": "OL10 4QU",
+      "addressCountry": "GB"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 53.5908, "longitude": -2.2185 },
+    "telephone": "+441706627702",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "12:00",
+      "closes": "21:00"
+    }],
+    "servesCuisine": ["British","Fish and Chips"],
+    "priceRange": "£",
+    "url": "https://heywoodchippy.co.uk"
+  }
+  </script>
+</head>
+<body>
+
+<!-- Animated aurora mesh background -->
+<div class="aurora-stage" aria-hidden="true">
+  <div class="aurora"></div>
+  <div class="aurora aurora--2"></div>
+</div>
+<div class="aurora-veil" aria-hidden="true"></div>
+
+<!-- One-time intro (plays once per browser session) -->
+<div class="intro-loader" aria-hidden="true">
+  <div class="intro-loader__inner">
+    <img class="intro-loader__logo" src="images/Adobe Express - file.png" alt="">
+    <span class="intro-loader__line"></span>
+    <span class="intro-loader__text">Heywood Chippy</span>
+  </div>
+</div>
+
+<!-- SVG Sprite -->
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <defs>
+    <symbol id="icon-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.5 12c0 0-2.5-6-8.5-6C5.5 6 2 12 2 12s3.5 6 10 6c6 0 8.5-6 8.5-6z"/>
+      <circle cx="16" cy="12" r="1.2" fill="currentColor" stroke="none"/>
+      <path d="M20.5 12l2-3M20.5 12l2 3"/>
+    </symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </symbol>
+    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0011 17c0 1.66-1 3-3 3-2 0-3-1.34-3-3 0-1.5.75-2.6 1.5-3.5.5-.6 1-1.5 1-2.5V9c0 0 1 1.5 1 3zM17 9c0 4-2 6-5 8 0-2 1-3 1-5 0-1.5-.5-3-2-4 1 0 3 .5 4 1.5.5.5 2 .5 2 1V9z"/>
+    </symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <symbol id="icon-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="22" y1="2" x2="11" y2="13"/>
+      <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar" role="banner">
+  <p class="announcement-bar__text">
+    Fresh Fish Battered to Order &nbsp;&middot;&nbsp; Free Delivery Over £15 (Under 3 Miles) &nbsp;&middot;&nbsp; Open Mon–Sat 12pm–9pm
+  </p>
+  <button class="announcement-bar__dismiss" aria-label="Dismiss announcement">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+      <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Navigation -->
+<nav class="site-nav bar-visible" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Heywood Chippy home">
+      <img src="images/Adobe Express - file.png" alt="Heywood Chippy" width="120" height="48">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="tel:01706627702" class="nav-cta phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+      <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+      Call to Order
+    </a>
+    <div class="nav-mobile-wrap">
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="mobile-nav-bubble" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════ -->
+<section class="page-hero contact-hero" style="height: 42vh; min-height: 300px;" aria-label="Contact page hero">
+  <!-- &&& IMAGE 9 · CONTACT PAGE HERO BACKGROUND · subject: golden chips / fish & chips (heavy overlay applied) · size: 1600×600 (wide banner, landscape). To change: replace the photo ID in url() below. Pick from https://unsplash.com/s/photos/fish-and-chips -->
+  <div class="page-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1707773726979-4b87cd1c838a?w=1600&q=80&auto=format&fit=crop');" role="img" aria-label="Golden chips"></div>
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+  <div class="page-hero__content">
+    <p class="page-hero__eyebrow">Get in Touch</p>
+    <h1 class="page-hero__title">Contact Us</h1>
+    <p class="page-hero__sub">We&rsquo;re here Mon–Sat, 12pm–9pm</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTACT MAIN — TWO COLUMN
+═══════════════════════════════════════════════════════ -->
+<section class="contact-main" aria-label="Contact form and information">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Form -->
+      <div class="contact-form-col" data-reveal>
+        <p class="section-eyebrow">Send a Message</p>
+        <h2 class="contact-col-title">Drop Us a Line</h2>
+        <span class="gold-line"></span>
+        <p class="contact-col-sub">Have a question? Need to arrange something? Send us a message and we&rsquo;ll get back to you.</p>
+
+        <!-- OWNER: replace YOUR_FORM_ID with your Formspree form ID -->
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          novalidate
+          aria-label="Contact form"
+        >
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Your Name</label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              class="form-input"
+              placeholder="Your full name"
+              required
+              autocomplete="name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              class="form-input"
+              placeholder="your@email.com"
+              required
+              autocomplete="email"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Message</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              class="form-textarea"
+              placeholder="How can we help?"
+              required
+              rows="6"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary contact-submit" aria-label="Send message">
+            <svg aria-hidden="true"><use href="#icon-send"/></svg>
+            Send Message
+          </button>
+
+          <div class="form-success" id="form-success" role="alert" aria-live="polite">
+            <svg width="20" height="20" aria-hidden="true"><use href="#icon-check"/></svg>
+            Message sent — we&rsquo;ll be in touch soon.
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Info + Map -->
+      <div class="contact-info-col" data-reveal data-reveal-delay="2">
+        <p class="section-eyebrow">Find Us</p>
+        <h2 class="contact-col-title">We&rsquo;re on Wham Street</h2>
+        <span class="gold-line"></span>
+
+        <div class="contact-info-list">
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg aria-hidden="true"><use href="#icon-pin"/></svg>
+            </div>
+            <div class="contact-info-body">
+              <strong class="contact-info-label">Address</strong>
+              <span class="contact-info-value">
+                2 Wham Street<br>
+                Heywood<br>
+                OL10 4QU
+              </span>
+              <a
+                href="https://maps.google.com/?q=2+Wham+Street+Heywood+OL10+4QU"
+                class="contact-info-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open in Google Maps"
+              >Get Directions</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+            </div>
+            <div class="contact-info-body">
+              <strong class="contact-info-label">Phone</strong>
+              <a href="tel:01706627702" class="contact-info-value contact-info-value--large phone-link" aria-label="Call 01706 627702">
+                01706 627702
+              </a>
+              <span class="contact-info-note">Tap to call on mobile</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg aria-hidden="true"><use href="#icon-clock"/></svg>
+            </div>
+            <div class="contact-info-body">
+              <strong class="contact-info-label">Opening Hours</strong>
+              <div class="hours-list">
+                <div class="hours-row">
+                  <span class="hours-day">Monday – Saturday</span>
+                  <span class="hours-time">12:00pm – 9:00pm</span>
+                </div>
+                <div class="hours-row">
+                  <span class="hours-day">Sunday</span>
+                  <span class="hours-time">Closed</span>
+                </div>
+              </div>
+              <div class="contact-info-badge" aria-live="polite">
+                <span data-live-badge></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Map embed -->
+        <div class="map-wrap" style="margin-top: var(--sp-8);">
+          <iframe
+            src="https://maps.google.com/maps?q=2+Wham+Street+Heywood+OL10+4QU&output=embed&z=16"
+            width="100%"
+            height="280"
+            style="border:none; border-radius: var(--radius-md); filter: grayscale(25%) contrast(1.1);"
+            loading="lazy"
+            title="Heywood Chippy on Google Maps"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     CALL TO ORDER CTA
+═══════════════════════════════════════════════════════ -->
+<section class="contact-cta" aria-label="Call to order">
+  <div class="container">
+    <div class="contact-cta__inner" data-reveal>
+      <p class="section-eyebrow">Fastest Way to Order</p>
+      <h2 class="contact-cta__title">Give Us a Call</h2>
+      <a href="tel:01706627702" class="contact-cta__phone phone-link" aria-label="Call 01706 627702">
+        01706 627702
+      </a>
+      <a href="tel:01706627702" class="btn btn-primary phone-link" aria-label="Call to order now">
+        <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+        Call to Order
+      </a>
+      <p class="contact-cta__note">Mon–Sat &nbsp;12pm–9pm &nbsp;&middot;&nbsp; Sunday Closed</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo" aria-label="Heywood Chippy home">
+          <img src="images/Adobe Express - file.png" alt="Heywood Chippy" width="110" height="44" loading="lazy">
+        </a>
+        <p class="footer-tagline">Proper British Fish &amp; Chips</p>
+        <p class="footer-sub">Proudly serving Heywood</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Navigate</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="menu.html">Our Menu</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Find Us</p>
+        <div class="footer-info">
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-pin"/></svg>
+            <span>2 Wham Street<br>Heywood, OL10 4QU</span>
+          </div>
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-phone"/></svg>
+            <a href="tel:01706627702" class="phone-link">01706 627702</a>
+          </div>
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-clock"/></svg>
+            <div class="footer-hours">
+              <span>Mon–Sat &nbsp;12:00pm–9:00pm</span>
+              <span>Sunday — Closed</span>
+              <span data-live-badge aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="footer-year"></span> Heywood Chippy. All rights reserved.</span>
+      <span>Proudly serving Heywood</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile CTA Bar -->
+<div class="mobile-cta-bar" role="complementary" aria-label="Call to order">
+  <a href="tel:01706627702" class="mobile-cta-btn phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+    <span class="mobile-cta-pulse" aria-hidden="true"><i></i></span>
+    <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+    Call to Order &nbsp;&middot;&nbsp; 01706 627702
+  </a>
+</div>
+
+<!-- Desktop floating call button -->
+<a href="tel:01706627702" class="call-fab phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+  <span class="call-fab__ring" aria-hidden="true"></span>
+  <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+  Call to Order
+</a>
+
+<script src="global.js" defer></script>
+<script src="effects.js" defer></script>
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  /* Contact form — no-reload submit */
+  const form    = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  const submit  = form && form.querySelector('.contact-submit');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!submit) return;
+
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+
+      try {
+        const data = new FormData(form);
+        const res  = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          success && success.classList.add('is-visible');
+          success && success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          submit.disabled = false;
+          submit.innerHTML = '<svg aria-hidden="true"><use href="#icon-send"/></svg> Try Again';
+        }
+      } catch {
+        submit.disabled = false;
+        submit.innerHTML = '<svg aria-hidden="true"><use href="#icon-send"/></svg> Try Again';
+      }
+    });
+  }
+</script>
+</body>
+</html>
