@@ -3,42 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{if(sessionStorage.getItem('hc-intro'))document.documentElement.classList.add('intro-seen');}catch(e){}</script>
   <title>Our Menu – Heywood Chippy</title>
-  <meta name="description" content="Full menu: fish, chips, kebabs, burgers, kids meals and more. Phone orders only: 01706 627702. Open Mon–Sat 12pm–9pm.">
-  <link rel="icon" type="image/png" href="images/Adobe Express - file.png">
-  <meta name="theme-color" content="#0d1f3c">
+  <meta name="description" content="Full menu with prices. Fish, chips, kebabs, burgers, kids meals and more. Phone orders: 01706 627702.">
+  <link rel="canonical" href="https://heywoodchippy.co.uk/menu.html">
+  <link rel="icon" href="images/favicon.PNG" type="image/png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Heywood Chippy">
+  <meta property="og:title" content="Our Menu – Heywood Chippy">
+  <meta property="og:description" content="Full menu with prices. Fish, chips, kebabs, burgers, kids meals and more.">
+  <meta property="og:image" content="https://heywoodchippy.co.uk/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- CSS -->
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/effects.css">
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website">
-  <meta property="og:site_name"   content="Heywood Chippy">
-  <meta property="og:title"       content="Our Menu – Heywood Chippy">
-  <meta property="og:description" content="Full menu: fish, chips, kebabs, burgers, kids meals and more. Phone orders only: 01706 627702.">
-  <meta property="og:image"       content="https://heywoodchippy.co.uk/images/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url"         content="https://heywoodchippy.co.uk/menu.html">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card"  content="summary_large_image">
-  <meta name="twitter:image" content="https://heywoodchippy.co.uk/images/og-image.jpg">
-
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FastFoodRestaurant",
     "name": "Heywood Chippy",
-    "image": "https://heywoodchippy.co.uk/images/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2 Wham Street",
@@ -47,6 +35,7 @@
       "postalCode": "OL10 4QU",
       "addressCountry": "GB"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": 53.5908, "longitude": -2.2185 },
     "telephone": "+441706627702",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
@@ -56,1179 +45,1015 @@
     }],
     "servesCuisine": ["British","Fish and Chips"],
     "priceRange": "£",
-    "url": "https://heywoodchippy.co.uk",
-    "hasMenu": "https://heywoodchippy.co.uk/menu.html"
+    "url": "https://heywoodchippy.co.uk"
   }
   </script>
 </head>
-<body class="menu-page">
+<body>
 
-<!-- ── SVG Sprite ──────────────────────────────────────────────── -->
-<svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
+<!-- Animated aurora mesh background -->
+<div class="aurora-stage" aria-hidden="true">
+  <div class="aurora"></div>
+  <div class="aurora aurora--2"></div>
+</div>
+<div class="aurora-veil" aria-hidden="true"></div>
+
+<!-- One-time intro (plays once per browser session) -->
+<div class="intro-loader" aria-hidden="true">
+  <div class="intro-loader__inner">
+    <img class="intro-loader__logo" src="images/Adobe Express - file.png" alt="">
+    <span class="intro-loader__line"></span>
+    <span class="intro-loader__text">Heywood Chippy</span>
+  </div>
+</div>
+
+<!-- SVG Sprite -->
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
-    <symbol id="icon-fish" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M20 12c0-1.9-1.6-4.2-4-5.5l1.5-3.5-3.5 1.5C13 4.2 12.5 4 12 4 7.6 4 4 7.6 4 12s3.6 8 8 8c.5 0 1-.1 1.5-.2l3.5 1.5-1.5-3.5c2.4-1.3 4-3.6 4-5.8zm-9 1a1 1 0 110-2 1 1 0 010 2z"/>
+    <symbol id="icon-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.5 12c0 0-2.5-6-8.5-6C5.5 6 2 12 2 12s3.5 6 10 6c6 0 8.5-6 8.5-6z"/>
+      <circle cx="16" cy="12" r="1.2" fill="currentColor" stroke="none"/>
+      <path d="M20.5 12l2-3M20.5 12l2 3"/>
     </symbol>
-    <symbol id="icon-phone" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
     </symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-      <polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
     </symbol>
-    <symbol id="icon-pin" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    <symbol id="icon-van" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="1"/>
+      <path d="M16 8h4l3 5v4h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
     </symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+      <circle cx="12" cy="10" r="3"/>
     </symbol>
-    <symbol id="icon-arrow" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
     </symbol>
-    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0011 17c0 1.66-1 3-3 3-2 0-3-1.34-3-3 0-1.5.75-2.6 1.5-3.5.5-.6 1-1.5 1-2.5V9c0 0 1 1.5 1 3zM17 9c0 4-2 6-5 8 0-2 1-3 1-5 0-1.5-.5-3-2-4 1 0 3 .5 4 1.5.5.5 2 .5 2 1V9z"/>
     </symbol>
-    <symbol id="icon-family" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
     </symbol>
-    <symbol id="icon-pound" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M13 7c0-1.1-.9-2-2-2s-2 .9-2 2c0 .55.22 1.04.58 1.41L9 9H7v2h1.17L7 13H5v2h1.28L5.72 17H5v2h14v-2h-8.72l.44-2H13v-2h-4.28L10 11h3V9h-1.58c.36-.37.58-.86.58-1.4z"/>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
     </symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24">
-      <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24">
-      <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-      <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="icon-tag" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
-      <line x1="7" y1="7" x2="7.01" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="icon-kebab" viewBox="0 0 24 24">
-      <circle cx="12" cy="5" r="2" fill="currentColor"/>
-      <circle cx="12" cy="12" r="2" fill="currentColor"/>
-      <circle cx="12" cy="19" r="2" fill="currentColor"/>
-    </symbol>
-    <symbol id="icon-burger" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 7h18M3 12h18M3 17h18"/>
-    </symbol>
-    <symbol id="icon-cup" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M17 8h1a4 4 0 010 8h-1M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/>
-    </symbol>
-    <symbol id="icon-star" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
     </symbol>
   </defs>
 </svg>
 
-<!-- ── Scroll Progress ──────────────────────────────────────────── -->
-<div id="scroll-progress" aria-hidden="true"></div>
+<!-- Scroll Progress -->
+<div class="scroll-progress" aria-hidden="true"></div>
 
-<!-- ── Announcement Bar ─────────────────────────────────────────── -->
-<div id="anno-bar" role="banner" aria-label="Site announcement">
-  <div class="anno-inner">
-    <span class="anno-text">
-      <span>Fresh Fish Battered to Order</span>
-      <span class="anno-sep" aria-hidden="true">·</span>
-      <span>Free Delivery Over £15 (Under 3 Miles)</span>
-      <span class="anno-sep" aria-hidden="true">·</span>
-      <span>Open Mon–Sat 12pm–9pm</span>
-    </span>
-  </div>
-  <button id="anno-dismiss" aria-label="Dismiss announcement">×</button>
+<!-- Announcement Bar -->
+<div class="announcement-bar" role="banner">
+  <p class="announcement-bar__text">
+    Fresh Fish Battered to Order &nbsp;&middot;&nbsp; Free Delivery Over £15 (Under 3 Miles) &nbsp;&middot;&nbsp; Open Mon–Sat 12pm–9pm
+  </p>
+  <button class="announcement-bar__dismiss" aria-label="Dismiss announcement">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+      <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
+    </svg>
+  </button>
 </div>
 
-<!-- ── Navigation ───────────────────────────────────────────────── -->
-<header id="navbar">
+<!-- Navigation -->
+<nav class="site-nav bar-visible" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-
-    <a class="nav-logo" href="index.html" aria-label="Heywood Chippy – Home">
-      <img src="images/Picture3-removebg-preview.png" alt="Heywood Chippy" width="120" height="46">
+    <a href="index.html" class="nav-logo" aria-label="Heywood Chippy home">
+      <img src="images/Adobe Express - file.png" alt="Heywood Chippy" width="120" height="48">
     </a>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html"   class="nav-link">Home</a>
-      <a href="about.html"   class="nav-link">About</a>
-      <a href="menu.html"    class="nav-link active">Menu</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-
-    <div class="nav-right">
-      <a href="tel:01706627702" class="nav-cta">
-        <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-        Call to Order
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="tel:01706627702" class="nav-cta phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+      <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+      Call to Order
+    </a>
+    <div class="nav-mobile-wrap">
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-    </div>
-
-  </div>
-</header>
-
-<!-- ── Mobile Menu ───────────────────────────────────────────────── -->
-<nav id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="index.html"   class="mobile-nav-link">Home</a>
-  <a href="about.html"   class="mobile-nav-link">About</a>
-  <a href="menu.html"    class="mobile-nav-link active">Menu</a>
-  <a href="contact.html" class="mobile-nav-link">Contact</a>
-  <div class="mobile-menu-footer">
-    <div class="mobile-menu-info">
-      <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-      <a href="tel:01706627702">01706 627702</a>
-    </div>
-    <div class="mobile-menu-info">
-      <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>
-      2 Wham Street, Heywood
-    </div>
-    <div class="mobile-menu-info">
-      <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
-      Mon–Sat: 12pm – 9:00pm
+      <nav class="mobile-nav-bubble" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </div>
 </nav>
-<div id="mobile-overlay" aria-hidden="true"></div>
 
-<main>
-
-  <!-- ── Page Hero (slim) ──────────────────────────────────────── -->
-  <section class="page-hero menu-hero" aria-label="Menu header">
-    <div class="page-hero-bg" aria-hidden="true"></div>
-    <div class="page-hero-overlay" aria-hidden="true"></div>
-    <div class="page-hero-content container">
-      <p class="eyebrow">Everything We Serve</p>
-      <h1>Our Menu</h1>
-      <p class="page-hero-sub">Phone orders only &mdash; call <a href="tel:01706627702">01706 627702</a> or message us on WhatsApp</p>
+<!-- ═══════════════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════════════ -->
+<section class="page-hero menu-hero" style="height: 50vh; min-height: 360px;" aria-label="Menu page hero">
+  <!-- &&& IMAGE 6 · MENU PAGE HERO BACKGROUND · subject: fish & chips (heavy overlay applied) · size: 1600×600 (wide banner, landscape). To change: replace the photo ID in url() below. Pick from https://unsplash.com/s/photos/fish-and-chips -->
+  <div class="page-hero__bg" style="background-image: url('https://images.unsplash.com/photo-1587606381492-7586d66a04a5?w=1600&q=80&auto=format&fit=crop');" role="img" aria-label="Fish and chips"></div>
+  <div class="page-hero__overlay" aria-hidden="true"></div>
+  <div class="page-hero__content">
+    <p class="page-hero__eyebrow">Heywood Chippy</p>
+    <h1 class="page-hero__title">Our Menu</h1>
+    <p class="page-hero__sub">Best price by phone &nbsp;&middot;&nbsp; <a href="tel:01706627702" class="phone-link">01706 627702</a></p>
+    <div class="menu-hero__actions">
+      <a href="tel:01706627702" class="btn btn-primary phone-link" aria-label="Call to order on 01706 627702">
+        <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+        Call to Order
+      </a>
+      <a href="#order-online" class="btn btn-outline-gold">Order Online</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── Mobile Tab Bar ────────────────────────────────────────── -->
-  <nav class="menu-tabs" aria-label="Menu categories" id="menu-tabs">
-    <a href="#cat-special"  class="tab-pill active">
-      <svg class="icon" aria-hidden="true" width="14" height="14"><use href="#icon-tag"/></svg>
-      Special Offer
-    </a>
-    <a href="#cat-fish"     class="tab-pill">
-      <svg class="icon" aria-hidden="true" width="14" height="14"><use href="#icon-fish"/></svg>
-      Fish
-    </a>
-    <a href="#cat-chips"    class="tab-pill">
-      <svg class="icon" aria-hidden="true" width="14" height="14"><use href="#icon-flame"/></svg>
-      Chips
-    </a>
-    <a href="#cat-sausage"  class="tab-pill">Sausage &amp; Pies</a>
-    <a href="#cat-tray"     class="tab-pill">Kebabs in Tray</a>
-    <a href="#cat-kebabs"   class="tab-pill">
-      <svg class="icon" aria-hidden="true" width="14" height="14"><use href="#icon-kebab"/></svg>
-      Kebabs
-    </a>
-    <a href="#cat-wraps"    class="tab-pill">Wraps</a>
-    <a href="#cat-burgers"  class="tab-pill">
-      <svg class="icon" aria-hidden="true" width="14" height="14"><use href="#icon-burger"/></svg>
-      Burgers
-    </a>
-    <a href="#cat-nuggets"  class="tab-pill">Nuggets</a>
-    <a href="#cat-kids"     class="tab-pill">Kids Meal</a>
-    <a href="#cat-extras"   class="tab-pill">Extras &amp; Sides</a>
-    <a href="#cat-sauces"   class="tab-pill">Sauces</a>
-    <a href="#cat-drinks"   class="tab-pill">
-      <svg class="icon" aria-hidden="true" width="14" height="14"><use href="#icon-cup"/></svg>
-      Drinks
-    </a>
-  </nav>
+<!-- ═══════════════════════════════════════════════════════
+     ORDER HUB (menu top) — cheapest direct + delivery platforms
+═══════════════════════════════════════════════════════ -->
+<section class="order-hub order-hub--menu" id="order-online" aria-label="How to order">
+  <div class="container">
 
-  <!-- ── Menu Layout ───────────────────────────────────────────── -->
-  <div class="menu-layout">
-
-    <!-- Sidebar -->
-    <aside class="menu-sidebar" aria-label="Menu navigation">
-      <div class="sidebar-search">
-        <svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg>
-        <input type="search" id="menu-search" placeholder="Search the menu…" aria-label="Search menu items">
+    <!-- BIG vibrant cheapest-price card -->
+    <div class="direct-order" data-reveal>
+      <span class="direct-order__badge">
+        <svg aria-hidden="true"><use href="#icon-tag"/></svg>
+        Cheapest Prices
+      </span>
+      <h2 class="direct-order__title">Skip the Apps &mdash; <em>Order Direct</em></h2>
+      <p class="direct-order__sub">Ordering by phone is always the cheapest way &mdash; no app fees, straight to the people cooking your food.</p>
+      <span class="direct-order__deliver">
+        <svg aria-hidden="true"><use href="#icon-van"/></svg>
+        We deliver too &mdash; free over £15 within 3 miles
+      </span>
+      <a href="tel:01706627702" class="direct-order__phone phone-link" aria-label="Call 01706 627702">01706 627702</a>
+      <div class="btn-magnetic">
+        <a href="tel:01706627702" class="btn btn-primary direct-order__cta phone-link" aria-label="Call to order direct now">
+          <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+          Call to Order Direct
+        </a>
       </div>
+      <!-- WhatsApp ordering will be added here later — for now this routes to a phone call. -->
+      <p class="direct-order__note"><strong>WhatsApp ordering coming soon</strong> &nbsp;&middot;&nbsp; for now, give us a ring</p>
+    </div>
 
-      <p class="sidebar-heading">Categories</p>
-      <nav class="sidebar-nav" aria-label="Category links">
-        <a href="#cat-special" class="sidebar-link active">
-          <svg class="icon" aria-hidden="true"><use href="#icon-tag"/></svg>
-          Special Offer
-        </a>
-        <a href="#cat-fish" class="sidebar-link">
-          <svg class="icon" aria-hidden="true"><use href="#icon-fish"/></svg>
-          Fish
-        </a>
-        <a href="#cat-chips" class="sidebar-link">
-          <svg class="icon" aria-hidden="true"><use href="#icon-flame"/></svg>
-          Chips
-        </a>
-        <a href="#cat-sausage" class="sidebar-link">Sausage &amp; Pies</a>
-        <a href="#cat-tray" class="sidebar-link">Kebabs in Tray</a>
-        <a href="#cat-kebabs" class="sidebar-link">
-          <svg class="icon" aria-hidden="true"><use href="#icon-kebab"/></svg>
-          Kebabs
-        </a>
-        <a href="#cat-wraps" class="sidebar-link">Wraps</a>
-        <a href="#cat-burgers" class="sidebar-link">
-          <svg class="icon" aria-hidden="true"><use href="#icon-burger"/></svg>
-          Burgers
-        </a>
-        <a href="#cat-nuggets" class="sidebar-link">Nuggets</a>
-        <a href="#cat-kids" class="sidebar-link">
-          <svg class="icon" aria-hidden="true"><use href="#icon-family"/></svg>
-          Kids Meal
-        </a>
-        <a href="#cat-extras" class="sidebar-link">Extras &amp; Sides</a>
-        <a href="#cat-sauces" class="sidebar-link">Sauces &amp; Dips</a>
-        <a href="#cat-drinks" class="sidebar-link">
-          <svg class="icon" aria-hidden="true"><use href="#icon-cup"/></svg>
-          Drinks
-        </a>
-      </nav>
+    <!-- Delivery platforms (URLs set once in global.js → PLATFORM_URLS) -->
+    <p class="platforms-label" data-reveal>Prefer an app? We&rsquo;re on all four &mdash; delivery &amp; collection</p>
+    <div class="platforms" data-reveal>
 
-      <p class="sidebar-heading" style="margin-top: var(--space-6)">Order by Phone</p>
-      <a href="tel:01706627702" class="btn btn-gold" style="width:100%; justify-content:center; margin-bottom:var(--space-2)">
-        <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-        01706 627702
+      <a href="#" data-platform="orderyoyo" class="platform-btn platform-btn--orderyoyo" aria-label="Order on OrderYOYO — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/OYYLogo.png" alt="OrderYOYO" loading="lazy" width="200" height="112">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection</span>
       </a>
-      <a href="https://wa.me/441706627702?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width:100%; justify-content:center">
-        <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-        WhatsApp Order
+
+      <a href="#" data-platform="justeat" class="platform-btn platform-btn--justeat" aria-label="Order on Just Eat — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/JELogo.png" alt="Just Eat" loading="lazy" width="120" height="120">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection</span>
       </a>
-    </aside>
 
-    <!-- Menu Content -->
-    <section class="menu-content" id="menu-content" aria-label="Menu items">
-
-      <!-- No results message -->
-      <div class="no-results" id="no-results" role="status" aria-live="polite">
-        <strong>No items found</strong>
-        Try a different search term
-      </div>
-
-      <!-- ══ SPECIAL OFFER ══════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-special" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="36" height="36"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-          </div>
-          <h2 class="cat-title">Special Offer</h2>
-        </div>
-        <p class="cat-desc">Our best-value bundles — more for less.</p>
-
-        <div class="deal-grid">
-          <div class="deal-card deal-card--hero"
-               data-name="The Big Special"
-               data-desc="large fish chips mushy peas gravy can drink deal best value">
-            <span class="deal-flag">Best Value</span>
-            <p class="deal-name">The Big Special</p>
-            <p class="deal-desc">Large fish, large chips, large mushy peas, large gravy and a can of drink. Everything you need in one go.</p>
-            <p class="deal-price">£11.50</p>
-          </div>
-
-          <div class="deal-card"
-               data-name="Family Feast"
-               data-desc="family deal fish chips peas drinks bundle">
-            <span class="deal-flag">Deal</span>
-            <p class="deal-name">Family Feast</p>
-            <p class="deal-desc">2 large fish, 4 large chips, 2 mushy peas and 2 cans of drink.</p>
-            <p class="deal-price">£22.00</p>
-          </div>
-
-          <div class="deal-card"
-               data-name="Fish and Chip Supper"
-               data-desc="fish chip supper deal gravy peas">
-            <span class="deal-flag">Deal</span>
-            <p class="deal-name">Fish &amp; Chip Supper</p>
-            <p class="deal-desc">Large fish, large chips and a large gravy or mushy peas.</p>
-            <p class="deal-price">£8.50</p>
-          </div>
-
-          <div class="deal-card"
-               data-name="Kebab Meal"
-               data-desc="kebab meal deal chips can drink doner shish">
-            <span class="deal-flag">Deal</span>
-            <p class="deal-name">Kebab Meal</p>
-            <p class="deal-desc">Any large doner or shish kebab served with chips and a can of drink.</p>
-            <p class="deal-price">£9.50</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ══ FISH ══════════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-fish" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true"><use href="#icon-fish"/></svg>
-          </div>
-          <h2 class="cat-title">Fish</h2>
-        </div>
-        <p class="cat-desc">Freshly sourced, battered to order. We never batch-fry in advance.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Cod"
-               data-desc="classic white fish golden batter crispy fried">
-            <div class="mi-info">
-              <p class="mi-name">Cod</p>
-              <p class="mi-desc">Classic white fish in our crispy golden batter.</p>
-              <div class="size-pills">
-                <span class="size-pill">Med <strong>£5.20</strong></span>
-                <span class="size-pill">Lrg <strong>£6.00</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Haddock"
-               data-desc="haddock white fish batter golden northern favourite">
-            <div class="mi-info">
-              <p class="mi-name">Haddock</p>
-              <p class="mi-desc">Slightly sweeter than cod — a northern favourite.</p>
-              <div class="size-pills">
-                <span class="size-pill">Med <strong>£5.20</strong></span>
-                <span class="size-pill">Lrg <strong>£6.00</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Plaice"
-               data-desc="plaice flat fish delicate batter light crispy">
-            <div class="mi-info">
-              <p class="mi-name">Plaice</p>
-              <p class="mi-desc">Delicate flat fish with a light, crispy coat.</p>
-              <div class="size-pills">
-                <span class="size-pill">Med <strong>£5.50</strong></span>
-                <span class="size-pill">Lrg <strong>£6.50</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Scampi"
-               data-desc="scampi langoustine breaded golden">
-            <div class="mi-info">
-              <p class="mi-name">Scampi</p>
-              <p class="mi-desc">Breaded langoustine tails, golden and crisp.</p>
-            </div>
-            <p class="mi-price">£5.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Fishcake"
-               data-desc="fishcake potato fish fried battered">
-            <div class="mi-info">
-              <p class="mi-name">Fishcake</p>
-              <p class="mi-desc">Fish and potato cake in batter — great as a snack or side.</p>
-            </div>
-            <p class="mi-price">£1.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Salt and Pepper Chips"
-               data-desc="salt pepper chips seasoned spicy crispy chinese">
-            <div class="mi-info">
-              <p class="mi-name">Salt &amp; Pepper Chips</p>
-              <p class="mi-desc">Our thick-cut chips tossed in a house blend of salt, white pepper and chilli.</p>
-            </div>
-            <p class="mi-price">£3.00</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ CHIPS ══════════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-chips" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true"><use href="#icon-flame"/></svg>
-          </div>
-          <h2 class="cat-title">Chips</h2>
-        </div>
-        <p class="cat-desc">Proper thick-cut chips, fried fresh in beef dripping.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Chips"
-               data-desc="chips fries thick cut fried potato">
-            <div class="mi-info">
-              <p class="mi-name">Chips</p>
-              <p class="mi-desc">Thick-cut potato chips, fried until golden.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£1.80</strong></span>
-                <span class="size-pill">Med <strong>£2.20</strong></span>
-                <span class="size-pill">Lrg <strong>£2.80</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Cheesy Chips"
-               data-desc="cheese chips melted cheddar sauce loaded">
-            <div class="mi-info">
-              <p class="mi-name">Cheesy Chips</p>
-              <p class="mi-desc">Large chips smothered in melted cheese sauce.</p>
-            </div>
-            <p class="mi-price">£3.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Gravy Chips"
-               data-desc="chips gravy beef northern loaded">
-            <div class="mi-info">
-              <p class="mi-name">Gravy Chips</p>
-              <p class="mi-desc">Large chips drenched in rich beef gravy.</p>
-            </div>
-            <p class="mi-price">£3.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Cheese and Gravy Chips"
-               data-desc="cheese gravy chips northern loaded combo">
-            <div class="mi-info">
-              <p class="mi-name">Cheese &amp; Gravy Chips</p>
-              <p class="mi-desc">The full northern experience — cheese sauce and gravy on large chips.</p>
-            </div>
-            <p class="mi-price">£3.80</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ SAUSAGE & PIES ═════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-sausage" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor" aria-hidden="true" style="color:var(--color-gold)"><rect x="2" y="9" width="20" height="6" rx="3"/><rect x="5" y="11" width="14" height="2" rx="1" opacity=".4"/></svg>
-          </div>
-          <h2 class="cat-title">Sausage &amp; Pies</h2>
-        </div>
-        <p class="cat-desc">Great pork sausages in batter and proper pastry pies — a chip shop staple.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Battered Sausage"
-               data-desc="sausage batter fried pork golden crispy">
-            <div class="mi-info">
-              <p class="mi-name">Battered Sausage</p>
-              <p class="mi-desc">Thick pork sausage in crispy golden batter.</p>
-            </div>
-            <p class="mi-price">£2.00</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Plain Sausage"
-               data-desc="sausage plain pork no batter">
-            <div class="mi-info">
-              <p class="mi-name">Plain Sausage</p>
-              <p class="mi-desc">Thick pork sausage, no batter.</p>
-            </div>
-            <p class="mi-price">£1.70</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Saveloy"
-               data-desc="saveloy red sausage smoked traditional">
-            <div class="mi-info">
-              <p class="mi-name">Saveloy</p>
-              <p class="mi-desc">The classic red smoked sausage — a chip shop icon.</p>
-            </div>
-            <p class="mi-price">£1.80</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Meat Pie"
-               data-desc="pie pastry meat beef mince shortcrust">
-            <div class="mi-info">
-              <p class="mi-name">Meat Pie</p>
-              <p class="mi-desc">Shortcrust pastry filled with seasoned minced beef.</p>
-            </div>
-            <p class="mi-price">£2.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Chicken Pie"
-               data-desc="pie pastry chicken cream flaky">
-            <div class="mi-info">
-              <p class="mi-name">Chicken Pie</p>
-              <p class="mi-desc">Flaky pastry filled with tender chicken in a cream sauce.</p>
-            </div>
-            <p class="mi-price">£2.50</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ KEBABS IN TRAY ═════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-tray" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true"><use href="#icon-kebab"/></svg>
-          </div>
-          <h2 class="cat-title">Kebabs in Tray</h2>
-        </div>
-        <p class="cat-desc">Doner or shish on a bed of chips with salad and your choice of sauce — served in a tray.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Doner Kebab in Tray"
-               data-desc="doner kebab tray chips salad sauce lamb">
-            <div class="mi-info">
-              <p class="mi-name">Doner Kebab in Tray</p>
-              <p class="mi-desc">Sliced doner meat on chips with salad and chilli or garlic sauce.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£6.00</strong></span>
-                <span class="size-pill">Lrg <strong>£8.00</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Shish Kebab in Tray"
-               data-desc="shish kebab tray chips salad sauce chicken lamb skewer">
-            <div class="mi-info">
-              <p class="mi-name">Shish Kebab in Tray</p>
-              <p class="mi-desc">Grilled chicken or lamb skewers on chips with salad and sauce.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£6.50</strong></span>
-                <span class="size-pill">Lrg <strong>£8.50</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Mixed Kebab in Tray"
-               data-desc="mixed doner shish kebab tray chips salad">
-            <div class="mi-info">
-              <p class="mi-name">Mixed Kebab in Tray</p>
-              <p class="mi-desc">Half doner, half shish on chips with full salad and sauce.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£7.00</strong></span>
-                <span class="size-pill">Lrg <strong>£9.00</strong></span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ KEBABS ══════════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-kebabs" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true"><use href="#icon-kebab"/></svg>
-          </div>
-          <h2 class="cat-title">Kebabs</h2>
-        </div>
-        <p class="cat-desc">Classic pitta-wrapped kebabs with fresh salad and sauce of your choice.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Doner Kebab"
-               data-desc="doner kebab pitta lamb salad sauce chilli garlic">
-            <div class="mi-info">
-              <p class="mi-name">Doner Kebab</p>
-              <p class="mi-desc">Sliced doner in a warm pitta with lettuce, tomato, onion and chilli or garlic sauce.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£5.00</strong></span>
-                <span class="size-pill">Lrg <strong>£6.50</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Shish Kebab"
-               data-desc="shish kebab pitta chicken lamb skewer salad">
-            <div class="mi-info">
-              <p class="mi-name">Shish Kebab</p>
-              <p class="mi-desc">Grilled skewer meat in a pitta with salad and your choice of sauce.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£5.50</strong></span>
-                <span class="size-pill">Lrg <strong>£7.00</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Mixed Kebab"
-               data-desc="mixed doner shish kebab pitta salad sauce">
-            <div class="mi-info">
-              <p class="mi-name">Mixed Kebab</p>
-              <p class="mi-desc">Doner and shish combined in a large pitta with salad and sauce.</p>
-            </div>
-            <p class="mi-price">£7.50</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ WRAPS ══════════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-wraps" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--color-gold)"><path d="M3 6l9-3 9 3v12l-9 3-9-3z"/><path d="M3 6l9 3m0 12V9m9-3l-9 3"/></svg>
-          </div>
-          <h2 class="cat-title">Wraps</h2>
-        </div>
-        <p class="cat-desc">Soft flour tortilla wraps with fresh fillings — a lighter option.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Doner Wrap"
-               data-desc="doner wrap tortilla salad sauce lamb chilli garlic">
-            <div class="mi-info">
-              <p class="mi-name">Doner Wrap</p>
-              <p class="mi-desc">Doner meat, lettuce, tomato, onion and chilli or garlic sauce in a flour tortilla.</p>
-            </div>
-            <p class="mi-price">£5.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Shish Wrap"
-               data-desc="shish wrap chicken lamb tortilla salad sauce">
-            <div class="mi-info">
-              <p class="mi-name">Shish Wrap</p>
-              <p class="mi-desc">Grilled shish, fresh salad and sauce wrapped in a soft tortilla.</p>
-            </div>
-            <p class="mi-price">£6.00</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Mixed Wrap"
-               data-desc="mixed doner shish wrap tortilla salad">
-            <div class="mi-info">
-              <p class="mi-name">Mixed Wrap</p>
-              <p class="mi-desc">Half doner, half shish with salad and sauce in a tortilla.</p>
-            </div>
-            <p class="mi-price">£6.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Chicken Wrap"
-               data-desc="chicken wrap grilled salad tortilla garlic mayo">
-            <div class="mi-info">
-              <p class="mi-name">Chicken Wrap</p>
-              <p class="mi-desc">Grilled chicken breast with salad and garlic mayo in a soft wrap.</p>
-            </div>
-            <p class="mi-price">£5.50</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ BURGERS ═════════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-burgers" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true"><use href="#icon-burger"/></svg>
-          </div>
-          <h2 class="cat-title">Burgers</h2>
-        </div>
-        <p class="cat-desc">Proper burgers — not pretentious, just good.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Beef Burger"
-               data-desc="beef burger bun lettuce tomato ketchup quarter pound">
-            <div class="mi-info">
-              <p class="mi-name">Beef Burger</p>
-              <p class="mi-desc">Quarter-pound beef patty in a brioche bun with lettuce, tomato and ketchup.</p>
-            </div>
-            <p class="mi-price">£4.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Cheese Burger"
-               data-desc="cheeseburger beef burger cheese melted bun">
-            <div class="mi-info">
-              <p class="mi-name">Cheese Burger</p>
-              <p class="mi-desc">As above, topped with a slice of melted cheese.</p>
-            </div>
-            <p class="mi-price">£5.00</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Double Cheese Burger"
-               data-desc="double cheeseburger two patties beef cheese bun">
-            <div class="mi-info">
-              <p class="mi-name">Double Cheese Burger</p>
-              <p class="mi-desc">Two quarter-pound patties, double cheese, lettuce, tomato and ketchup.</p>
-            </div>
-            <p class="mi-price">£6.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Chicken Burger"
-               data-desc="chicken burger fillet crispy bun mayo lettuce">
-            <div class="mi-info">
-              <p class="mi-name">Chicken Burger</p>
-              <p class="mi-desc">Crispy chicken fillet in a bun with lettuce and garlic mayo.</p>
-            </div>
-            <p class="mi-price">£4.80</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Chicken and Cheese Burger"
-               data-desc="chicken cheese burger fillet melted bun">
-            <div class="mi-info">
-              <p class="mi-name">Chicken &amp; Cheese Burger</p>
-              <p class="mi-desc">Crispy chicken fillet with melted cheese, lettuce and garlic mayo.</p>
-            </div>
-            <p class="mi-price">£5.30</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ NUGGETS ═════════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-nuggets" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--color-gold)"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-          </div>
-          <h2 class="cat-title">Nuggets</h2>
-        </div>
-        <p class="cat-desc">Golden chicken nuggets — great as a snack or a side.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Chicken Nuggets"
-               data-desc="chicken nuggets crispy fried golden breaded">
-            <div class="mi-info">
-              <p class="mi-name">Chicken Nuggets</p>
-              <p class="mi-desc">Crispy breaded chicken nuggets, served with a dip of your choice.</p>
-              <div class="size-pills">
-                <span class="size-pill">6 pcs <strong>£3.50</strong></span>
-                <span class="size-pill">10 pcs <strong>£5.50</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Spicy Nuggets"
-               data-desc="spicy chicken nuggets hot chilli crispy">
-            <div class="mi-info">
-              <p class="mi-name">Spicy Nuggets</p>
-              <p class="mi-desc">Hot and crispy nuggets with a chilli kick — extra sauce on the side.</p>
-              <div class="size-pills">
-                <span class="size-pill">6 pcs <strong>£3.80</strong></span>
-                <span class="size-pill">10 pcs <strong>£5.80</strong></span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ KIDS MEAL ═══════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-kids" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true"><use href="#icon-family"/></svg>
-          </div>
-          <h2 class="cat-title">Kids Meal</h2>
-        </div>
-        <p class="cat-desc">Perfectly sized portions for little ones, with a drink included.</p>
-
-        <div class="deal-grid">
-
-          <div class="deal-card"
-               data-name="Kids Fish and Chips"
-               data-desc="kids fish chips small portion drink children">
-            <span class="deal-flag">Kids</span>
-            <p class="deal-name">Kids Fish &amp; Chips</p>
-            <p class="deal-desc">Small fish in batter with a portion of chips and a can of drink.</p>
-            <p class="deal-price">£4.50</p>
-          </div>
-
-          <div class="deal-card"
-               data-name="Kids Meal"
-               data-desc="kids meal sausage nuggets fishcake chips drink children">
-            <span class="deal-flag">Kids</span>
-            <p class="deal-name">Kids Meal</p>
-            <p class="deal-desc">Small chips with a choice of main and a can of drink.</p>
-            <div class="choice-chips">
-              <span class="choice-chip">Sausage</span>
-              <span class="choice-chip">Nuggets (4 pcs)</span>
-              <span class="choice-chip">Fishcake</span>
-            </div>
-            <p class="deal-price">£4.00</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ EXTRAS & SIDES ══════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-extras" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--color-gold)"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <h2 class="cat-title">Extras &amp; Sides</h2>
-        </div>
-        <p class="cat-desc">All the extras that make a chip shop meal complete.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Mushy Peas"
-               data-desc="mushy peas marrowfat side northern classic">
-            <div class="mi-info">
-              <p class="mi-name">Mushy Peas</p>
-              <p class="mi-desc">Classic marrowfat peas, thick and savoury.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£1.00</strong></span>
-                <span class="size-pill">Lrg <strong>£1.50</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Gravy"
-               data-desc="gravy beef sauce northern side rich">
-            <div class="mi-info">
-              <p class="mi-name">Gravy</p>
-              <p class="mi-desc">Rich beef gravy — the north's favourite chip companion.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£1.00</strong></span>
-                <span class="size-pill">Lrg <strong>£1.50</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Curry Sauce"
-               data-desc="curry sauce mild chip shop side">
-            <div class="mi-info">
-              <p class="mi-name">Curry Sauce</p>
-              <p class="mi-desc">Mild chip-shop style curry sauce — pairs perfectly with chips.</p>
-              <div class="size-pills">
-                <span class="size-pill">Sm <strong>£1.00</strong></span>
-                <span class="size-pill">Lrg <strong>£1.50</strong></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item"
-               data-name="Baked Beans"
-               data-desc="baked beans heinz tomato sauce side">
-            <div class="mi-info">
-              <p class="mi-name">Baked Beans</p>
-              <p class="mi-desc">Heinz baked beans — kids love them.</p>
-            </div>
-            <p class="mi-price">£1.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Bread and Butter"
-               data-desc="bread butter white sliced chip butty">
-            <div class="mi-info">
-              <p class="mi-name">Bread &amp; Butter</p>
-              <p class="mi-desc">Two slices of white bread and butter — the classic chip butty base.</p>
-            </div>
-            <p class="mi-price">£0.60</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Pickled Egg"
-               data-desc="pickled egg vinegar traditional classic">
-            <div class="mi-info">
-              <p class="mi-name">Pickled Egg</p>
-              <p class="mi-desc">A chip shop classic — pickled in malt vinegar.</p>
-            </div>
-            <p class="mi-price">£0.80</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Pickled Onion"
-               data-desc="pickled onion vinegar side tangy">
-            <div class="mi-info">
-              <p class="mi-name">Pickled Onion</p>
-              <p class="mi-desc">Sharp and tangy — the perfect palate cleanser.</p>
-            </div>
-            <p class="mi-price">£0.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Salt and Pepper Box"
-               data-desc="salt pepper chips box seasoning chinese style spicy">
-            <div class="mi-info">
-              <p class="mi-name">Salt &amp; Pepper Box</p>
-              <p class="mi-desc">A full box of chips tossed in our house salt and pepper seasoning.</p>
-            </div>
-            <p class="mi-price">£3.50</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ SAUCES & DIPS ══════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-sauces" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--color-gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h2 class="cat-title">Sauces &amp; Dips</h2>
-        </div>
-        <p class="cat-desc">Sauce sachets and dipping pots to go with your order.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Ketchup"
-               data-desc="ketchup tomato sauce sachet heinz">
-            <div class="mi-info">
-              <p class="mi-name">Ketchup</p>
-              <p class="mi-desc">Heinz tomato ketchup sachet.</p>
-            </div>
-            <p class="mi-price">£0.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Brown Sauce"
-               data-desc="brown sauce HP sachet">
-            <div class="mi-info">
-              <p class="mi-name">Brown Sauce</p>
-              <p class="mi-desc">HP brown sauce sachet.</p>
-            </div>
-            <p class="mi-price">£0.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Mayonnaise"
-               data-desc="mayo mayonnaise sachet hellmanns">
-            <div class="mi-info">
-              <p class="mi-name">Mayonnaise</p>
-              <p class="mi-desc">Hellmann's mayonnaise sachet.</p>
-            </div>
-            <p class="mi-price">£0.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Garlic Sauce"
-               data-desc="garlic sauce dip kebab creamy">
-            <div class="mi-info">
-              <p class="mi-name">Garlic Sauce</p>
-              <p class="mi-desc">Creamy garlic sauce — classic with kebabs.</p>
-            </div>
-            <p class="mi-price">£0.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Chilli Sauce"
-               data-desc="chilli sauce hot dip spicy kebab">
-            <div class="mi-info">
-              <p class="mi-name">Chilli Sauce</p>
-              <p class="mi-desc">Hot chilli sauce — adds a kick to anything.</p>
-            </div>
-            <p class="mi-price">£0.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Sweet Chilli Sauce"
-               data-desc="sweet chilli sauce dip mild nuggets">
-            <div class="mi-info">
-              <p class="mi-name">Sweet Chilli Sauce</p>
-              <p class="mi-desc">Sweet with a mild chilli warmth — perfect with nuggets.</p>
-            </div>
-            <p class="mi-price">£0.50</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Tartare Sauce"
-               data-desc="tartare sauce fish dip capers dill">
-            <div class="mi-info">
-              <p class="mi-name">Tartare Sauce</p>
-              <p class="mi-desc">Classic fish accompaniment with capers and dill.</p>
-            </div>
-            <p class="mi-price">£0.50</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ══ DRINKS ══════════════════════════════════════════════ -->
-      <div class="menu-cat" id="cat-drinks" data-reveal>
-        <div class="cat-header">
-          <div class="cat-icon">
-            <svg class="icon" aria-hidden="true"><use href="#icon-cup"/></svg>
-          </div>
-          <h2 class="cat-title">Drinks</h2>
-        </div>
-        <p class="cat-desc">Cans and bottles to wash it all down.</p>
-
-        <div class="menu-items">
-
-          <div class="menu-item"
-               data-name="Coca-Cola"
-               data-desc="coke cola fizzy drink can 330ml">
-            <div class="mi-info">
-              <p class="mi-name">Coca-Cola</p>
-              <p class="mi-desc">330ml can.</p>
-            </div>
-            <p class="mi-price">£1.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Diet Coke"
-               data-desc="diet coke cola zero sugar can 330ml">
-            <div class="mi-info">
-              <p class="mi-name">Diet Coke</p>
-              <p class="mi-desc">330ml can — zero sugar.</p>
-            </div>
-            <p class="mi-price">£1.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Sprite"
-               data-desc="sprite lemonade fizzy lemon lime can 330ml">
-            <div class="mi-info">
-              <p class="mi-name">Sprite</p>
-              <p class="mi-desc">330ml can — lemon and lime.</p>
-            </div>
-            <p class="mi-price">£1.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Fanta Orange"
-               data-desc="fanta orange fizzy can 330ml">
-            <div class="mi-info">
-              <p class="mi-name">Fanta Orange</p>
-              <p class="mi-desc">330ml can.</p>
-            </div>
-            <p class="mi-price">£1.20</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Still Water"
-               data-desc="water still mineral bottle 500ml">
-            <div class="mi-info">
-              <p class="mi-name">Still Water</p>
-              <p class="mi-desc">500ml bottle of still mineral water.</p>
-            </div>
-            <p class="mi-price">£1.00</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Sparkling Water"
-               data-desc="water sparkling fizzy bottle 500ml">
-            <div class="mi-info">
-              <p class="mi-name">Sparkling Water</p>
-              <p class="mi-desc">500ml bottle of sparkling water.</p>
-            </div>
-            <p class="mi-price">£1.00</p>
-          </div>
-
-          <div class="menu-item"
-               data-name="Fruit Juice"
-               data-desc="juice apple orange fruit carton 250ml">
-            <div class="mi-info">
-              <p class="mi-name">Fruit Juice</p>
-              <p class="mi-desc">Apple or orange — 250ml carton.</p>
-            </div>
-            <p class="mi-price">£1.00</p>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
+      <a href="#" data-platform="ubereats" class="platform-btn platform-btn--ubereats" aria-label="Order on Uber Eats — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/UberEatsLogo.png" alt="Uber Eats" loading="lazy" width="120" height="120">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection</span>
+      </a>
+
+      <a href="#" data-platform="deliveroo" class="platform-btn platform-btn--deliveroo" aria-label="Order on Deliveroo — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/DeliverooLogo.png" alt="Deliveroo" loading="lazy" width="200" height="112">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     MENU LAYOUT
+═══════════════════════════════════════════════════════ -->
+<div class="menu-layout" id="menu">
+
+  <!-- Mobile Tab Nav -->
+  <div class="menu-tabs-mobile" role="tablist" aria-label="Menu categories">
+    <div class="menu-tabs-scroll">
+      <button class="menu-tab active" data-cat="specials"   role="tab" aria-selected="true"  aria-controls="cat-specials">Specials</button>
+      <button class="menu-tab"        data-cat="fish"       role="tab" aria-selected="false" aria-controls="cat-fish">Fish</button>
+      <button class="menu-tab"        data-cat="chips"      role="tab" aria-selected="false" aria-controls="cat-chips">Chips</button>
+      <button class="menu-tab"        data-cat="sausage"    role="tab" aria-selected="false" aria-controls="cat-sausage">Sausage &amp; Pies</button>
+      <button class="menu-tab"        data-cat="kebabs-tray"role="tab" aria-selected="false" aria-controls="cat-kebabs-tray">Kebabs in Tray</button>
+      <button class="menu-tab"        data-cat="kebabs"     role="tab" aria-selected="false" aria-controls="cat-kebabs">Kebabs</button>
+      <button class="menu-tab"        data-cat="wraps"      role="tab" aria-selected="false" aria-controls="cat-wraps">Wraps</button>
+      <button class="menu-tab"        data-cat="saltpepper" role="tab" aria-selected="false" aria-controls="cat-saltpepper">Salt &amp; Pepper</button>
+      <button class="menu-tab"        data-cat="burgers"    role="tab" aria-selected="false" aria-controls="cat-burgers">Burgers</button>
+      <button class="menu-tab"        data-cat="nuggets"    role="tab" aria-selected="false" aria-controls="cat-nuggets">Nuggets</button>
+      <button class="menu-tab"        data-cat="kids"       role="tab" aria-selected="false" aria-controls="cat-kids">Kids</button>
+      <button class="menu-tab"        data-cat="extras"     role="tab" aria-selected="false" aria-controls="cat-extras">Extras</button>
+      <button class="menu-tab"        data-cat="sauces"     role="tab" aria-selected="false" aria-controls="cat-sauces">Sauces</button>
+      <button class="menu-tab"        data-cat="dips"       role="tab" aria-selected="false" aria-controls="cat-dips">Dips</button>
+      <button class="menu-tab"        data-cat="drinks"     role="tab" aria-selected="false" aria-controls="cat-drinks">Drinks</button>
+    </div>
+    <div class="menu-tab-indicator" aria-hidden="true"></div>
   </div>
 
-</main>
+  <!-- Sidebar (desktop) -->
+  <aside class="menu-sidebar" aria-label="Menu categories sidebar">
+    <div class="menu-sidebar__inner">
+      <!-- Search -->
+      <div class="menu-search">
+        <label for="menu-search-input" class="sr-only">Search the menu</label>
+        <div class="menu-search__wrap">
+          <svg class="menu-search__icon" aria-hidden="true"><use href="#icon-search"/></svg>
+          <input
+            type="search"
+            id="menu-search-input"
+            class="menu-search__input"
+            placeholder="Search menu…"
+            autocomplete="off"
+            spellcheck="false"
+          >
+        </div>
+      </div>
+      <div class="no-results" id="no-results" aria-live="polite" aria-atomic="true">No items found.</div>
 
-<!-- ── Footer ────────────────────────────────────────────────── -->
-<footer class="site-footer">
+      <!-- Category nav -->
+      <nav class="sidebar-nav" aria-label="Jump to category">
+        <div class="sidebar-indicator" aria-hidden="true"></div>
+        <a href="#cat-specials"    class="sidebar-link active" data-cat="specials">Special Offers</a>
+        <a href="#cat-fish"        class="sidebar-link"        data-cat="fish">Fish</a>
+        <a href="#cat-chips"       class="sidebar-link"        data-cat="chips">Chips</a>
+        <a href="#cat-sausage"     class="sidebar-link"        data-cat="sausage">Sausage &amp; Pies</a>
+        <a href="#cat-kebabs-tray" class="sidebar-link"        data-cat="kebabs-tray">Kebabs in Tray</a>
+        <a href="#cat-kebabs"      class="sidebar-link"        data-cat="kebabs">Kebabs</a>
+        <a href="#cat-wraps"       class="sidebar-link"        data-cat="wraps">Wraps</a>
+        <a href="#cat-saltpepper"  class="sidebar-link"        data-cat="saltpepper">Salt &amp; Pepper</a>
+        <a href="#cat-burgers"     class="sidebar-link"        data-cat="burgers">Burgers</a>
+        <a href="#cat-nuggets"     class="sidebar-link"        data-cat="nuggets">Nuggets</a>
+        <a href="#cat-kids"        class="sidebar-link"        data-cat="kids">Kids Meals</a>
+        <a href="#cat-extras"      class="sidebar-link"        data-cat="extras">Extras &amp; Sides</a>
+        <a href="#cat-sauces"      class="sidebar-link"        data-cat="sauces">Sauces</a>
+        <a href="#cat-dips"        class="sidebar-link"        data-cat="dips">Dips</a>
+        <a href="#cat-drinks"      class="sidebar-link"        data-cat="drinks">Drinks</a>
+      </nav>
+
+      <div class="sidebar-cta">
+        <a href="tel:01706627702" class="btn btn-primary btn--full phone-link" aria-label="Call to order on 01706 627702">
+          <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+          Call to Order
+        </a>
+        <p class="sidebar-cta-note"><a href="tel:01706627702" class="phone-link">01706 627702</a></p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Menu Content -->
+  <main class="menu-content" id="main-content">
+
+    <!-- ── SPECIAL OFFERS ─────────────────────────────────── -->
+    <section id="cat-specials" class="menu-category" aria-labelledby="head-specials">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-specials">Special Offers</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Our best-value deals, crafted to feed the whole family or treat yourself.</p>
+      </header>
+
+      <!-- Family Feast — featured card -->
+      <div class="menu-item special-featured" data-name="Family Feast" data-desc="Four fish two large chips choose any three sauces peas curry or gravy 1.5ltr Pepsi best value">
+        <div class="special-featured__badge">Best Value</div>
+        <div class="special-featured__body">
+          <div>
+            <h3 class="item-name">Family Feast</h3>
+            <p class="item-desc">&times;4 Fish &nbsp;&middot;&nbsp; &times;2 Large Chips &nbsp;&middot;&nbsp; Any 3 Sauces (Peas, Curry or Gravy) &nbsp;&middot;&nbsp; 1.5ltr Pepsi</p>
+          </div>
+          <span class="item-price">£25.00</span>
+        </div>
+      </div>
+
+      <div class="menu-item" data-name="Shashlik Deal" data-desc="Mix Kebab Shashlik on Naan Cone Chips any 330ml drink free dip">
+        <div class="item-main">
+          <h3 class="item-name">Shashlik Deal</h3>
+          <p class="item-desc">Mix Kebab Shashlik on Naan, Cone Chips, any 330ml drink &amp; free dip</p>
+        </div>
+        <span class="item-price">£9.85</span>
+      </div>
+
+      <div class="menu-item" data-name="Pie Meal Deal" data-desc="Any Pie or Pudding Chips any Sauce any 330ml can">
+        <div class="item-main">
+          <h3 class="item-name">Pie Meal Deal</h3>
+          <p class="item-desc">Any Pie or Pudding, Chips, any Sauce &amp; any 330ml can</p>
+        </div>
+        <span class="item-price">£6.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Fish and Chips Deal" data-desc="Fish Chips 330ml can">
+        <div class="item-main">
+          <h3 class="item-name">Fish &amp; Chips Deal</h3>
+          <p class="item-desc">Fish &amp; Chips alongside 330ml can</p>
+        </div>
+        <span class="item-price">£7.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Wrap Meal" data-desc="Any wrap Chips any 330ml drink">
+        <div class="item-main">
+          <h3 class="item-name">Wrap Meal</h3>
+          <p class="item-desc">Any wrap &amp; Chips, any 330ml drink</p>
+        </div>
+        <span class="item-price">£6.50</span>
+      </div>
+    </section>
+
+    <!-- ── FISH ─────────────────────────────────────────── -->
+    <section id="cat-fish" class="menu-category" aria-labelledby="head-fish">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-fish">Fish</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Sourced fresh daily. Battered to order in our signature crispy golden batter.</p>
+      </header>
+
+      <div class="menu-item" data-name="Fish Small Cod" data-desc="Fresh cod in crispy golden batter">
+        <div class="item-main">
+          <h3 class="item-name">Fish <span class="item-variant">(Small Cod)</span></h3>
+          <p class="item-desc">Fresh cod in crispy golden batter</p>
+        </div>
+        <span class="item-price">£4.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Fish and Chips" data-desc="Classic British fish and chips">
+        <div class="item-main">
+          <h3 class="item-name">Fish &amp; Chips</h3>
+          <p class="item-desc">Classic British fish and chips</p>
+        </div>
+        <span class="item-price">£6.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Fish Cake" data-desc="Fish in a cake like a hash brown but with fish">
+        <div class="item-main">
+          <h3 class="item-name">Fish Cake</h3>
+          <p class="item-desc">Fish in a cake, like a hash brown but with fish</p>
+        </div>
+        <span class="item-price">£1.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Small Fish Butty" data-desc="Crispy battered fish in a soft buttered bap">
+        <div class="item-main">
+          <h3 class="item-name">Small Fish Butty</h3>
+          <p class="item-desc">Crispy battered fish in a soft buttered bap</p>
+        </div>
+        <span class="item-price">£5.00</span>
+      </div>
+
+      <div class="menu-item" data-name="12 Scampi" data-desc="Crispy battered scampi">
+        <div class="item-main">
+          <h3 class="item-name">12 Scampi</h3>
+          <p class="item-desc">Crispy battered scampi</p>
+        </div>
+        <span class="item-price">£4.00</span>
+      </div>
+
+      <div class="menu-item" data-name="T-Cake Teacake" data-desc="Soft teacake">
+        <div class="item-main">
+          <h3 class="item-name">T-Cake</h3>
+          <p class="item-desc">Soft teacake</p>
+        </div>
+        <span class="item-price">£0.60</span>
+      </div>
+
+      <div class="menu-item" data-name="Masala Fish and Chips" data-desc="Masala-coated fish with chunky chips">
+        <div class="item-main">
+          <h3 class="item-name">Masala Fish &amp; Chips</h3>
+          <p class="item-desc">Masala-coated fish with chunky chips</p>
+        </div>
+        <span class="item-price">£6.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Masala Fish with Naan" data-desc="Spiced masala fish with warm naan">
+        <div class="item-main">
+          <h3 class="item-name">Masala Fish with Naan</h3>
+          <p class="item-desc">Spiced masala fish with warm naan</p>
+        </div>
+        <span class="item-price">£6.00</span>
+      </div>
+    </section>
+
+    <!-- ── CHIPS ─────────────────────────────────────────── -->
+    <section id="cat-chips" class="menu-category" aria-labelledby="head-chips">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-chips">Chips</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Chunky, golden, and never sitting under a lamp.</p>
+      </header>
+
+      <div class="menu-item" data-name="Chips Small" data-desc="Chunky golden chips small portion">
+        <div class="item-main"><h3 class="item-name">Chips <span class="item-variant">(Small)</span></h3></div>
+        <span class="item-price">£2.40</span>
+      </div>
+
+      <div class="menu-item" data-name="Chips Large" data-desc="Chunky golden chips large portion">
+        <div class="item-main"><h3 class="item-name">Chips <span class="item-variant">(Large)</span></h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Cone of Chips" data-desc="Chips in a cone">
+        <div class="item-main"><h3 class="item-name">Cone of Chips</h3></div>
+        <span class="item-price">£1.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Cheese and Chips" data-desc="Chips topped with melted cheese">
+        <div class="item-main"><h3 class="item-name">Cheese and Chips</h3></div>
+        <span class="item-price">£3.20</span>
+      </div>
+
+      <div class="menu-item" data-name="Onion Rings 15" data-desc="Fifteen crispy golden onion rings">
+        <div class="item-main"><h3 class="item-name">Onion Rings <span class="item-variant">(15)</span></h3></div>
+        <span class="item-price">£3.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Hash Brown 3" data-desc="Three crispy hash browns">
+        <div class="item-main"><h3 class="item-name">Hash Brown <span class="item-variant">(3)</span></h3></div>
+        <span class="item-price">£3.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Hash Brown 6" data-desc="Six crispy hash browns">
+        <div class="item-main"><h3 class="item-name">Hash Brown <span class="item-variant">(6)</span></h3></div>
+        <span class="item-price">£5.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Popcorn" data-desc="Bite-size crispy chicken popcorn portion">
+        <div class="item-main"><h3 class="item-name">Chicken Popcorn <span class="item-variant">(portion)</span></h3></div>
+        <span class="item-price">£4.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Popcorn with Chips" data-desc="Chicken popcorn served with chips">
+        <div class="item-main"><h3 class="item-name">Chicken Popcorn with Chips</h3></div>
+        <span class="item-price">£5.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Samosa" data-desc="Crispy pastry samosa">
+        <div class="item-main"><h3 class="item-name">Samosa</h3></div>
+        <span class="item-price">£1.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Potato Fritter" data-desc="Battered potato fritter">
+        <div class="item-main"><h3 class="item-name">Potato Fritter</h3></div>
+        <span class="item-price">£0.60</span>
+      </div>
+
+      <div class="menu-item" data-name="Chip Butty" data-desc="Chips in a soft buttered bap">
+        <div class="item-main"><h3 class="item-name">Chip Butty</h3></div>
+        <span class="item-price">£2.30</span>
+      </div>
+    </section>
+
+    <!-- ── SAUSAGE & PIES ─────────────────────────────────── -->
+    <section id="cat-sausage" class="menu-category" aria-labelledby="head-sausage">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-sausage">Sausage &amp; Pies</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Northern classics, done properly.</p>
+      </header>
+
+      <div class="menu-item" data-name="Small Sausage" data-desc="Small sausage">
+        <div class="item-main"><h3 class="item-name">Small Sausage</h3></div>
+        <span class="item-price">£1.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Small Sausage and Chips" data-desc="Small sausage with chips">
+        <div class="item-main"><h3 class="item-name">Small Sausage and Chips</h3></div>
+        <span class="item-price">£2.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Small Battered Sausage" data-desc="Small sausage in crispy batter">
+        <div class="item-main"><h3 class="item-name">Small Battered Sausage</h3></div>
+        <span class="item-price">£1.20</span>
+      </div>
+
+      <div class="menu-item" data-name="Jumbo Sausage" data-desc="Large jumbo sausage">
+        <div class="item-main"><h3 class="item-name">Jumbo Sausage</h3></div>
+        <span class="item-price">£1.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Jumbo Sausage and Chips" data-desc="Jumbo sausage with chips">
+        <div class="item-main"><h3 class="item-name">Jumbo Sausage and Chips</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Large Battered Sausage" data-desc="Large sausage in crispy batter">
+        <div class="item-main"><h3 class="item-name">Large Battered Sausage</h3></div>
+        <span class="item-price">£2.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Large Battered Sausage and Chips" data-desc="Large battered sausage with chips">
+        <div class="item-main"><h3 class="item-name">Large Battered Sausage and Chips</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Sausage Butty" data-desc="Sausage in a soft buttered bap">
+        <div class="item-main"><h3 class="item-name">Sausage Butty</h3></div>
+        <span class="item-price">£2.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Holland Pie" data-desc="Classic Northern pie">
+        <div class="item-main">
+          <h3 class="item-name">Holland Pie</h3>
+          <p class="item-desc">Classic Northern pie</p>
+        </div>
+        <span class="item-price">£2.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Pie Meal Deal" data-desc="Any Pie or Pudding Chips Sauce 330ml can">
+        <div class="item-main">
+          <h3 class="item-name">Pie Meal Deal</h3>
+          <p class="item-desc">Any Pie or Pudding, Chips, Sauce, 330ml can</p>
+        </div>
+        <span class="item-price">£6.50</span>
+      </div>
+    </section>
+
+    <!-- ── KEBABS IN TRAY ─────────────────────────────────── -->
+    <section id="cat-kebabs-tray" class="menu-category" aria-labelledby="head-kebabs-tray">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-kebabs-tray">Kebabs in Tray</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">All served with fresh salad and sauce of your choice.</p>
+      </header>
+
+      <div class="menu-item" data-name="Donner Meat in Tray" data-desc="Donner meat in tray with fresh salad and sauce">
+        <div class="item-main"><h3 class="item-name">Donner Meat in Tray</h3></div>
+        <span class="item-price">Med £4.50 &nbsp;/&nbsp; Lrg £5.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Donner Meat and Chips in Tray" data-desc="Donner meat with chips in tray fresh salad sauce">
+        <div class="item-main"><h3 class="item-name">Donner Meat and Chips in Tray</h3></div>
+        <span class="item-price">Med £5.50 &nbsp;/&nbsp; Lrg £6.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Tikka in Tray" data-desc="Chicken tikka in tray with fresh salad and sauce">
+        <div class="item-main"><h3 class="item-name">Chicken Tikka in Tray</h3></div>
+        <span class="item-price">Med £5.00 &nbsp;/&nbsp; Lrg £6.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Tikka and Chips in Tray" data-desc="Chicken tikka with chips in tray fresh salad sauce">
+        <div class="item-main"><h3 class="item-name">Chicken Tikka and Chips in Tray</h3></div>
+        <span class="item-price">Med £5.50 &nbsp;/&nbsp; Lrg £6.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Mixed Meat in Tray" data-desc="Mixed meat in tray with fresh salad and sauce">
+        <div class="item-main"><h3 class="item-name">Mixed Meat in Tray</h3></div>
+        <span class="item-price">Med £5.50 &nbsp;/&nbsp; Lrg £6.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Mixed Meat and Chips in Tray" data-desc="Mixed meat with chips in tray fresh salad sauce">
+        <div class="item-main"><h3 class="item-name">Mixed Meat and Chips in Tray</h3></div>
+        <span class="item-price">Med £6.00 &nbsp;/&nbsp; Lrg £7.00</span>
+      </div>
+    </section>
+
+    <!-- ── KEBABS ─────────────────────────────────────────── -->
+    <section id="cat-kebabs" class="menu-category" aria-labelledby="head-kebabs">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-kebabs">Kebabs</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Served in pitta, naan, or tray. With salad and sauce of choice.</p>
+      </header>
+
+      <div class="menu-item" data-name="Donner Kebab" data-desc="Donner kebab in pitta naan or tray with salad and sauce">
+        <div class="item-main"><h3 class="item-name">Donner Kebab</h3></div>
+        <span class="item-price">from £5.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Tikka Kebab" data-desc="Chicken tikka kebab in pitta naan or tray with salad and sauce">
+        <div class="item-main"><h3 class="item-name">Chicken Tikka Kebab</h3></div>
+        <span class="item-price">from £5.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Mixed Kebab" data-desc="Mixed kebab in pitta naan or tray with salad and sauce">
+        <div class="item-main"><h3 class="item-name">Mixed Kebab</h3></div>
+        <span class="item-price">from £6.00</span>
+      </div>
+    </section>
+
+    <!-- ── WRAPS ──────────────────────────────────────────── -->
+    <section id="cat-wraps" class="menu-category" aria-labelledby="head-wraps">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-wraps">Wraps</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">All served with salad and sauce of your choice.</p>
+      </header>
+
+      <div class="menu-item" data-name="Chicken Fillet Wrap" data-desc="Chicken fillet wrap with salad and sauce">
+        <div class="item-main"><h3 class="item-name">Chicken Fillet Wrap</h3></div>
+        <span class="item-price">£4.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Donner Wrap" data-desc="Donner wrap with salad and sauce">
+        <div class="item-main"><h3 class="item-name">Donner Wrap</h3></div>
+        <span class="item-price">£4.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Tikka Wrap" data-desc="Chicken tikka wrap with salad and sauce">
+        <div class="item-main"><h3 class="item-name">Chicken Tikka Wrap</h3></div>
+        <span class="item-price">£4.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Mixed Wrap" data-desc="Mixed wrap with salad and sauce">
+        <div class="item-main"><h3 class="item-name">Mixed Wrap</h3></div>
+        <span class="item-price">£4.50</span>
+      </div>
+    </section>
+
+    <!-- ── SALT & PEPPER ──────────────────────────────────── -->
+    <section id="cat-saltpepper" class="menu-category" aria-labelledby="head-saltpepper">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-saltpepper">Salt &amp; Pepper</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">All served with peas, gravy or curry.</p>
+      </header>
+
+      <div class="menu-item" data-name="Salt and Pepper Chicken and Chips" data-desc="Salt pepper chicken with chips peas gravy curry">
+        <div class="item-main"><h3 class="item-name">Salt &amp; Pepper Chicken and Chips</h3></div>
+        <span class="item-price">£5.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Salt and Pepper Fish and Chips" data-desc="Salt pepper fish with chips peas gravy curry">
+        <div class="item-main"><h3 class="item-name">Salt &amp; Pepper Fish and Chips</h3></div>
+        <span class="item-price">£6.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Salt and Pepper Chips" data-desc="Salt pepper chips peas gravy curry">
+        <div class="item-main">
+          <h3 class="item-name">Salt &amp; Pepper Chips</h3>
+          <!-- REAL CONTENT NEEDED: confirm name — listed as "Salt & Pepper and Chips" on Just Eat -->
+        </div>
+        <span class="item-price">£3.00</span>
+      </div>
+    </section>
+
+    <!-- ── BURGERS ────────────────────────────────────────── -->
+    <section id="cat-burgers" class="menu-category" aria-labelledby="head-burgers">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-burgers">Burgers</h2>
+        <span class="gold-line"></span>
+      </header>
+
+      <div class="menu-item" data-name="Quarter Pound Cheeseburger" data-desc="1/4 lb cheeseburger">
+        <div class="item-main"><h3 class="item-name">&frac14;lb Cheeseburger</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Quarter Pound Chicken Burger" data-desc="1/4 lb chicken burger">
+        <div class="item-main"><h3 class="item-name">&frac14;lb Chicken Burger</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Half Pound Cheeseburger" data-desc="1/2 lb cheeseburger">
+        <div class="item-main"><h3 class="item-name">&frac12;lb Cheeseburger</h3></div>
+        <span class="item-price">£4.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Half Pound Chicken Burger" data-desc="1/2 lb chicken burger">
+        <div class="item-main"><h3 class="item-name">&frac12;lb Chicken Burger</h3></div>
+        <span class="item-price">£4.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Donner Kebab in Bun" data-desc="Donner kebab in a bun">
+        <div class="item-main"><h3 class="item-name">Donner Kebab in Bun</h3></div>
+        <span class="item-price">£3.00</span>
+      </div>
+    </section>
+
+    <!-- ── NUGGETS ────────────────────────────────────────── -->
+    <section id="cat-nuggets" class="menu-category" aria-labelledby="head-nuggets">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-nuggets">Nuggets</h2>
+        <span class="gold-line"></span>
+      </header>
+
+      <div class="menu-item" data-name="6 Chicken Nuggets" data-desc="Six chicken nuggets">
+        <div class="item-main"><h3 class="item-name">6 Chicken Nuggets</h3></div>
+        <span class="item-price">£2.50</span>
+      </div>
+
+      <div class="menu-item" data-name="9 Chicken Nuggets" data-desc="Nine chicken nuggets">
+        <div class="item-main"><h3 class="item-name">9 Chicken Nuggets</h3></div>
+        <span class="item-price">£3.00</span>
+      </div>
+    </section>
+
+    <!-- ── KIDS MEALS ──────────────────────────────────────── -->
+    <section id="cat-kids" class="menu-category" aria-labelledby="head-kids">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-kids">Kids Meals</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Each includes chips and a pop. All £3.50.</p>
+      </header>
+
+      <div class="menu-item" data-name="Kids Small Sausage meal" data-desc="Small sausage with chips and pop kids meal">
+        <div class="item-main"><h3 class="item-name">Small Sausage</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Kids Fish Cake meal" data-desc="Fish cake with chips and pop kids meal">
+        <div class="item-main"><h3 class="item-name">Fish Cake</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Kids 4 Nuggets meal" data-desc="Four nuggets with chips and pop kids meal">
+        <div class="item-main"><h3 class="item-name">&times;4 Nuggets</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Kids Fish meal" data-desc="Kids fish with chips and pop kids meal">
+        <div class="item-main"><h3 class="item-name">Kids Fish</h3></div>
+        <span class="item-price">£3.50</span>
+      </div>
+    </section>
+
+    <!-- ── EXTRAS & SIDES ─────────────────────────────────── -->
+    <section id="cat-extras" class="menu-category" aria-labelledby="head-extras">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-extras">Extras &amp; Sides</h2>
+        <span class="gold-line"></span>
+      </header>
+
+      <div class="menu-item" data-name="Onion Rings 15" data-desc="Fifteen crispy onion rings">
+        <div class="item-main"><h3 class="item-name">Onion Rings <span class="item-variant">(15)</span></h3></div>
+        <span class="item-price">£3.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Hash Brown 3 extras" data-desc="Three hash browns">
+        <div class="item-main"><h3 class="item-name">Hash Brown <span class="item-variant">(3)</span></h3></div>
+        <span class="item-price">£3.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Hash Brown 6 extras" data-desc="Six hash browns">
+        <div class="item-main"><h3 class="item-name">Hash Brown <span class="item-variant">(6)</span></h3></div>
+        <span class="item-price">£5.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Popcorn extras" data-desc="Bite-size crispy chicken popcorn">
+        <div class="item-main"><h3 class="item-name">Chicken Popcorn</h3></div>
+        <span class="item-price">£4.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Chicken Popcorn with Chips extras" data-desc="Chicken popcorn with chips">
+        <div class="item-main"><h3 class="item-name">Chicken Popcorn with Chips</h3></div>
+        <span class="item-price">£5.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Samosa extras" data-desc="Crispy samosa">
+        <div class="item-main"><h3 class="item-name">Samosa</h3></div>
+        <span class="item-price">£1.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Potato Fritter extras" data-desc="Battered potato fritter">
+        <div class="item-main"><h3 class="item-name">Potato Fritter</h3></div>
+        <span class="item-price">£0.60</span>
+      </div>
+    </section>
+
+    <!-- ── SAUCES ──────────────────────────────────────────── -->
+    <section id="cat-sauces" class="menu-category" aria-labelledby="head-sauces">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-sauces">Sauces</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Regular or Large. Note: English curry by default, please ask for a different varitations if you'd like something different.</p>
+      </header>
+
+      <div class="menu-item" data-name="Curry sauce" data-desc="English curry sauce regular or large">
+        <div class="item-main"><h3 class="item-name">Curry</h3></div>
+        <span class="item-price">Reg £1.20 &nbsp;/&nbsp; Lrg £1.40</span>
+      </div>
+
+      <div class="menu-item" data-name="Gravy sauce" data-desc="Gravy sauce regular or large">
+        <div class="item-main"><h3 class="item-name">Gravy</h3></div>
+        <span class="item-price">Reg £1.20 &nbsp;/&nbsp; Lrg £1.40</span>
+      </div>
+
+      <div class="menu-item" data-name="Peas mushy peas" data-desc="Mushy peas regular or large">
+        <div class="item-main"><h3 class="item-name">Peas</h3></div>
+        <span class="item-price">Reg £1.20 &nbsp;/&nbsp; Lrg £1.40</span>
+      </div>
+
+      <div class="menu-item" data-name="Beans baked beans" data-desc="Baked beans regular or large">
+        <div class="item-main"><h3 class="item-name">Beans</h3></div>
+        <span class="item-price">Reg £1.20 &nbsp;/&nbsp; Lrg £1.40</span>
+      </div>
+    </section>
+
+    <!-- ── DIPS ───────────────────────────────────────────── -->
+    <section id="cat-dips" class="menu-category" aria-labelledby="head-dips">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-dips">Dips</h2>
+        <span class="gold-line"></span>
+        <p class="cat-desc">Small or Large.</p>
+      </header>
+
+      <div class="menu-item" data-name="Mint Yoghurt dip" data-desc="Mint yoghurt dip small or large">
+        <div class="item-main"><h3 class="item-name">Mint Yoghurt</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Medium Chilli dip" data-desc="Medium chilli dip small or large">
+        <div class="item-main"><h3 class="item-name">Medium Chilli</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Hot Chilli dip" data-desc="Hot chilli dip small or large">
+        <div class="item-main"><h3 class="item-name">Hot Chilli</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Sweet Chilli dip" data-desc="Sweet chilli dip small or large">
+        <div class="item-main"><h3 class="item-name">Sweet Chilli</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Mayonnaise dip" data-desc="Mayonnaise dip small or large">
+        <div class="item-main"><h3 class="item-name">Mayonnaise</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Tomato Ketchup dip" data-desc="Tomato ketchup dip small or large">
+        <div class="item-main"><h3 class="item-name">Tomato Ketchup</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Garlic Mayo dip" data-desc="Garlic mayo dip small or large">
+        <div class="item-main"><h3 class="item-name">Garlic Mayo</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="BBQ Sauce dip" data-desc="BBQ sauce dip small or large">
+        <div class="item-main"><h3 class="item-name">BBQ Sauce</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+
+      <div class="menu-item" data-name="Mint Sauce dip" data-desc="Mint sauce dip small or large">
+        <div class="item-main"><h3 class="item-name">Mint Sauce</h3></div>
+        <span class="item-price">Sml £0.50 &nbsp;/&nbsp; Lrg £0.80</span>
+      </div>
+    </section>
+
+    <!-- ── DRINKS ─────────────────────────────────────────── -->
+    <section id="cat-drinks" class="menu-category" aria-labelledby="head-drinks">
+      <header class="cat-header">
+        <h2 class="cat-title" id="head-drinks">Drinks</h2>
+        <span class="gold-line"></span>
+      </header>
+
+      <div class="menu-item" data-name="Monster Energy Drink 500ml" data-desc="Monster energy drink 500ml can">
+        <div class="item-main"><h3 class="item-name">Monster Energy Drink 500ml</h3></div>
+        <span class="item-price">£1.90</span>
+      </div>
+
+      <div class="menu-item" data-name="Monster Energy Drink Pipeline Punch 500ml" data-desc="Monster pipeline punch energy drink 500ml">
+        <div class="item-main"><h3 class="item-name">Monster Energy Drink Pipeline Punch 500ml</h3></div>
+        <span class="item-price">£1.90</span>
+      </div>
+
+      <div class="menu-item" data-name="Monster Energy Drink Mango Loco 500ml" data-desc="Monster mango loco energy drink 500ml">
+        <div class="item-main"><h3 class="item-name">Monster Energy Drink Mango Loco 500ml</h3></div>
+        <span class="item-price">£1.90</span>
+      </div>
+
+      <div class="menu-item" data-name="Capri-Sun 200ml" data-desc="Capri-Sun juice drink 200ml carton">
+        <div class="item-main"><h3 class="item-name">Capri-Sun 200ml</h3></div>
+        <span class="item-price">£1.00</span>
+      </div>
+
+      <div class="menu-item" data-name="Water 500ml" data-desc="Still water 500ml bottle">
+        <div class="item-main"><h3 class="item-name">Water 500ml</h3></div>
+        <span class="item-price">£1.20</span>
+      </div>
+
+      <div class="menu-item" data-name="Lucozade Orange" data-desc="Lucozade orange energy drink">
+        <div class="item-main"><h3 class="item-name">Lucozade Orange</h3></div>
+        <span class="item-price">£1.70</span>
+      </div>
+
+      <div class="menu-item" data-name="Can 330ml Coca Cola Diet Coke Dr Pepper" data-desc="Soft drink can 330ml Coca Cola Diet Coke Dr Pepper and more">
+        <div class="item-main">
+          <h3 class="item-name">Can <span class="item-variant">(330ml)</span></h3>
+          <p class="item-desc">Coca Cola, Diet Coke, Dr Pepper &amp; more</p>
+        </div>
+        <span class="item-price">£1.20</span>
+      </div>
+
+      <div class="menu-item" data-name="500ml Bottle drink assorted" data-desc="500ml bottle soft drink assorted flavours">
+        <div class="item-main">
+          <h3 class="item-name">500ml Bottle</h3>
+          <p class="item-desc">Assorted flavours</p>
+        </div>
+        <span class="item-price">£1.70</span>
+      </div>
+
+      <div class="menu-item" data-name="1.5L Bottle drink assorted" data-desc="1.5 litre bottle soft drink assorted flavours">
+        <div class="item-main">
+          <h3 class="item-name">1.5L Bottle</h3>
+          <p class="item-desc">Assorted flavours</p>
+        </div>
+        <span class="item-price">£2.50</span>
+      </div>
+
+      <div class="menu-item" data-name="Carton Drink small carton juice" data-desc="Small carton of juice drink">
+        <div class="item-main">
+          <h3 class="item-name">Carton Drink</h3>
+          <p class="item-desc">Small carton of juice</p>
+        </div>
+        <span class="item-price">£0.50</span>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
-
-      <div class="footer-col footer-brand">
-        <img src="images/Picture3-removebg-preview.png" alt="Heywood Chippy" class="footer-logo" width="110" height="42" loading="lazy">
-        <p class="footer-tagline">Proper British fish &amp; chips, made fresh in the heart of Heywood since we opened our doors.</p>
-        <div class="footer-socials">
-          <a href="https://wa.me/441706627702?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us" class="footer-social-link">
-            <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-          </a>
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo" aria-label="Heywood Chippy home">
+          <img src="images/Adobe Express - file.png" alt="Heywood Chippy" width="110" height="44" loading="lazy">
+        </a>
+        <p class="footer-tagline">Proper British Fish &amp; Chips</p>
+        <p class="footer-sub">Proudly serving Heywood</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Navigate</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="menu.html">Our Menu</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title">Find Us</p>
+        <div class="footer-info">
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-pin"/></svg>
+            <span>2 Wham Street<br>Heywood, OL10 4QU</span>
+          </div>
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-phone"/></svg>
+            <a href="tel:01706627702" class="phone-link">01706 627702</a>
+          </div>
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-clock"/></svg>
+            <div class="footer-hours">
+              <span>Mon–Sat &nbsp;12:00pm–9:00pm</span>
+              <span>Sunday — Closed</span>
+              <span data-live-badge aria-live="polite"></span>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="footer-col footer-nav-col">
-        <p class="footer-heading">Navigate</p>
-        <ul class="footer-nav">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="menu.html">Full Menu</a></li>
-          <li><a href="contact.html">Find Us</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-contact-col">
-        <p class="footer-heading">Visit Us</p>
-        <div class="footer-info-list">
-          <div class="footer-info-item">
-            <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>
-            <span>2 Wham Street, Heywood, OL10 4QU</span>
-          </div>
-          <div class="footer-info-item">
-            <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-            <a href="tel:01706627702">01706 627702</a>
-          </div>
-          <div class="footer-info-item">
-            <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
-            <span>Mon–Sat: 12pm – 9pm<br>Sunday: Closed</span>
-          </div>
-        </div>
-        <div style="margin-top:var(--space-3)">
-          <span data-open-badge aria-live="polite">
-            <span class="badge-dot" data-dot></span>
-            <span data-text>Checking hours…</span>
-          </span>
-        </div>
-      </div>
-
     </div>
-
     <div class="footer-bottom">
-      <p class="footer-copy">&copy; <span id="footer-year"></span> Heywood Chippy. All rights reserved.</p>
-      <p class="footer-legal">Phone orders only &middot; Cash accepted &middot; 2 Wham Street, Heywood</p>
+      <span>&copy; <span id="footer-year"></span> Heywood Chippy. All rights reserved.</span>
+      <span>Proudly serving Heywood</span>
     </div>
   </div>
 </footer>
 
-<!-- ── Menu-specific Mobile Order Bar ─────────────────────────── -->
-<div id="menu-order-bar" aria-label="Order options">
-  <span class="menu-order-label">Ready to order?</span>
-  <a href="tel:01706627702" class="btn btn-gold">
-    <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-    Call Now
-  </a>
-  <a href="https://wa.me/441706627702?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
-    <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-    WhatsApp
+<!-- Mobile CTA Bar -->
+<div class="mobile-cta-bar" role="complementary" aria-label="Call to order">
+  <a href="tel:01706627702" class="mobile-cta-btn phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+    <span class="mobile-cta-pulse" aria-hidden="true"><i></i></span>
+    <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+    Call to Order &nbsp;&middot;&nbsp; 01706 627702
   </a>
 </div>
 
-<!-- ── Back to Top ──────────────────────────────────────────────── -->
-<button id="back-to-top" aria-label="Back to top">
-  <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-</button>
+<!-- Desktop floating call button -->
+<a href="tel:01706627702" class="call-fab phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+  <span class="call-fab__ring" aria-hidden="true"></span>
+  <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+  Call to Order
+</a>
 
-<!-- Scripts -->
-<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
-<script src="js/config.js" defer></script>
 <script src="js/global.js" defer></script>
-<script src="js/menu.js"   defer></script>
-
+<script src="js/menu.js" defer></script>
+<script src="js/effects.js" defer></script>
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
