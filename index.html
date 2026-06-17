@@ -3,42 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{if(sessionStorage.getItem('hc-intro'))document.documentElement.classList.add('intro-seen');}catch(e){}</script>
   <title>Heywood Chippy – Fresh Fish &amp; Chips, Heywood</title>
-  <meta name="description" content="Proper British fish &amp; chips. Fresh daily, battered to order. 2 Wham Street, Heywood. Call 01706 627702. Open Mon–Sat 12pm–9pm.">
-  <link rel="icon" type="image/png" href="images/Adobe Express - file.png">
-  <meta name="theme-color" content="#0d1f3c">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/design-system.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/home.css">
+  <meta name="description" content="Proper British fish &amp; chips. Fresh daily, battered to order. 2 Wham Street, Heywood, Greater Manchester.">
+  <meta name="keywords" content="fish and chips heywood, chippy heywood, takeaway heywood, heywood chippy, fish chips greater manchester">
+  <link rel="canonical" href="https://heywoodchippy.co.uk/">
+  <link rel="icon" href="images/favicon.PNG" type="image/png">
 
   <!-- Open Graph -->
-  <meta property="og:type"        content="website">
-  <meta property="og:site_name"   content="Heywood Chippy">
-  <meta property="og:title"       content="Heywood Chippy – Fresh Fish &amp; Chips, Heywood">
-  <meta property="og:description" content="Proper British fish &amp; chips. Fresh daily, battered to order. 2 Wham Street, Heywood.">
-  <meta property="og:image"       content="https://heywoodchippy.co.uk/images/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url"         content="https://heywoodchippy.co.uk">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Heywood Chippy">
+  <meta property="og:title" content="Heywood Chippy – Fresh Fish &amp; Chips, Heywood">
+  <meta property="og:description" content="Proper British fish &amp; chips. Fresh daily, battered to order. 2 Wham Street, Heywood, Greater Manchester.">
+  <meta property="og:image" content="https://heywoodchippy.co.uk/images/og-image.jpg">
+  <meta property="og:url" content="https://heywoodchippy.co.uk/">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card"  content="summary_large_image">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Heywood Chippy – Fresh Fish &amp; Chips, Heywood">
+  <meta name="twitter:description" content="Proper British fish &amp; chips. Fresh daily, battered to order.">
   <meta name="twitter:image" content="https://heywoodchippy.co.uk/images/og-image.jpg">
 
-  <!-- Schema.org -->
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/effects.css">
+
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FastFoodRestaurant",
     "name": "Heywood Chippy",
-    "image": "https://heywoodchippy.co.uk/images/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2 Wham Street",
@@ -47,11 +44,7 @@
       "postalCode": "OL10 4QU",
       "addressCountry": "GB"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 53.5908,
-      "longitude": -2.2185
-    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 53.5908, "longitude": -2.2185 },
     "telephone": "+441706627702",
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
@@ -61,553 +54,650 @@
     }],
     "servesCuisine": ["British","Fish and Chips"],
     "priceRange": "£",
-    "url": "https://heywoodchippy.co.uk",
-    "currenciesAccepted": "GBP",
-    "paymentAccepted": "Cash"
+    "url": "https://heywoodchippy.co.uk"
   }
   </script>
 </head>
-<body class="has-hero">
+<body>
 
-<!-- ── SVG Sprite ──────────────────────────────────────────────── -->
-<svg aria-hidden="true" style="display:none" xmlns="http://www.w3.org/2000/svg">
+<!-- Animated aurora mesh background (lives behind everything) -->
+<div class="aurora-stage" aria-hidden="true">
+  <div class="aurora"></div>
+  <div class="aurora aurora--2"></div>
+</div>
+<div class="aurora-veil" aria-hidden="true"></div>
+
+<!-- One-time intro (plays once per browser session) -->
+<div class="intro-loader" aria-hidden="true">
+  <div class="intro-loader__inner">
+    <img class="intro-loader__logo" src="images/Adobe Express - file.png" alt="">
+    <span class="intro-loader__line"></span>
+    <span class="intro-loader__text">Heywood Chippy</span>
+  </div>
+</div>
+
+<!-- SVG Sprite -->
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
-    <symbol id="icon-fish" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M20 12c0-1.9-1.6-4.2-4-5.5l1.5-3.5-3.5 1.5C13 4.2 12.5 4 12 4 7.6 4 4 7.6 4 12s3.6 8 8 8c.5 0 1-.1 1.5-.2l3.5 1.5-1.5-3.5c2.4-1.3 4-3.6 4-5.8zm-9 1a1 1 0 110-2 1 1 0 010 2z"/>
+    <symbol id="icon-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.5 12c0 0-2.5-6-8.5-6C5.5 6 2 12 2 12s3.5 6 10 6c6 0 8.5-6 8.5-6z"/>
+      <circle cx="16" cy="12" r="1.2" fill="currentColor" stroke="none"/>
+      <path d="M20.5 12l2-3M20.5 12l2 3"/>
     </symbol>
-    <symbol id="icon-phone" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012.88 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
     </symbol>
-    <symbol id="icon-clock" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-      <polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
     </symbol>
-    <symbol id="icon-van" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M20 8h-3V4H3C1.9 4 1 4.9 1 6v11h2c0 1.7 1.3 3 3 3s3-1.3 3-3h6c0 1.7 1.3 3 3 3s3-1.3 3-3h2v-5l-3-4zm-14 9.5c-.8 0-1.5-.7-1.5-1.5S5.2 14.5 6 14.5s1.5.7 1.5 1.5S6.8 17.5 6 17.5zm11 0c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5zM17 12V9.5h2.6L21 12H17z"/>
+    <symbol id="icon-van" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="1"/>
+      <path d="M16 8h4l3 5v4h-7V8z"/>
+      <circle cx="5.5" cy="18.5" r="2.5"/>
+      <circle cx="18.5" cy="18.5" r="2.5"/>
     </symbol>
-    <symbol id="icon-pin" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"/>
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+      <circle cx="12" cy="10" r="3"/>
     </symbol>
-    <symbol id="icon-star" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    <symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
     </symbol>
-    <symbol id="icon-flame" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z"/>
+    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0011 17c0 1.66-1 3-3 3-2 0-3-1.34-3-3 0-1.5.75-2.6 1.5-3.5.5-.6 1-1.5 1-2.5V9c0 0 1 1.5 1 3zM17 9c0 4-2 6-5 8 0-2 1-3 1-5 0-1.5-.5-3-2-4 1 0 3 .5 4 1.5.5.5 2 .5 2 1V9z"/>
     </symbol>
-    <symbol id="icon-arrow" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
     </symbol>
-    <symbol id="icon-chevron-down" viewBox="0 0 24 24">
-      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
     </symbol>
-    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
     </symbol>
-    <symbol id="icon-family" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+    <symbol id="icon-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 01-8 0"/>
     </symbol>
-    <symbol id="icon-pound" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M13 7c0-1.1-.9-2-2-2s-2 .9-2 2c0 .55.22 1.04.58 1.41L9 9H7v2h1.17L7 13H5v2h1.28L5.72 17H5v2h14v-2h-8.72l.44-2H13v-2h-4.28L10 11h3V9h-1.58c.36-.37.58-.86.58-1.4z"/>
+    <symbol id="icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/>
+      <line x1="7" y1="7" x2="7.01" y2="7"/>
     </symbol>
-    <symbol id="icon-check" viewBox="0 0 24 24">
-      <polyline points="20 6 9 17 4 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="icon-quote" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.123.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.375c-.271.05-.56.187-.882.312C7.264 4.81 6.93 4.931 6.67 5.14c-.315.2-.67.437-.918.7-.273.2-.462.52-.707.736-.272.257-.516.56-.67.91-.22.276-.35.583-.507.89-.09.325-.265.61-.312.965-.038.24-.045.49-.058.734-.026.306-.018.621.052.915.075.298.19.574.327.845.136.27.3.518.5.74.197.22.424.413.67.582.241.167.507.312.787.416.289.11.576.206.882.245.305.039.618.03.918-.003.302-.023.594-.095.877-.192.289-.1.545-.265.8-.414.247-.152.494-.313.697-.524.205-.208.395-.434.545-.689.15-.25.288-.505.388-.78.097-.27.17-.547.195-.831.03-.3.028-.599-.01-.889-.03-.296-.105-.582-.18-.86a4.985 4.985 0 00-.336-.827 4.4 4.4 0 00-.543-.736 4.38 4.38 0 00-.737-.605 4.44 4.44 0 00-.88-.432 4.557 4.557 0 00-.999-.2A4.517 4.517 0 006.5 10zm11 0c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.123.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.201-.271.05-.56.187-.882.312-.326.121-.66.242-.92.451-.315.2-.67.437-.918.7-.273.2-.462.52-.707.736-.272.257-.516.56-.67.91-.22.276-.35.583-.507.89-.09.325-.265.61-.312.965-.038.24-.045.49-.058.734-.026.306-.018.621.052.915.075.298.19.574.327.845.136.27.3.518.5.74.197.22.424.413.67.582.241.167.507.312.787.416.289.11.576.206.882.245.305.039.618.03.918-.003.302-.023.594-.095.877-.192.289-.1.545-.265.8-.414.247-.152.494-.313.697-.524.205-.208.395-.434.545-.689.15-.25.288-.505.388-.78.097-.27.17-.547.195-.831.03-.3.028-.599-.01-.889-.03-.296-.105-.582-.18-.86a4.985 4.985 0 00-.336-.827 4.4 4.4 0 00-.543-.736 4.38 4.38 0 00-.737-.605 4.44 4.44 0 00-.88-.432 4.557 4.557 0 00-.999-.2A4.517 4.517 0 0017.5 10z"/>
-    </symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24">
-      <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-      <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <symbol id="icon-spark" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z"/>
     </symbol>
   </defs>
 </svg>
 
-<!-- ── Scroll Progress ──────────────────────────────────────────── -->
-<div id="scroll-progress" aria-hidden="true"></div>
+<!-- Scroll Progress -->
+<div class="scroll-progress" aria-hidden="true"></div>
 
-<!-- ── Announcement Bar ─────────────────────────────────────────── -->
-<div id="anno-bar" role="banner" aria-label="Site announcement">
-  <div class="anno-inner">
-    <span class="anno-text">
-      <span>Fresh Fish Battered to Order</span>
-      <span class="anno-sep" aria-hidden="true">·</span>
-      <span>Free Delivery Over £15 (Under 3 Miles)</span>
-      <span class="anno-sep" aria-hidden="true">·</span>
-      <span>Open Mon–Sat 12pm–9pm</span>
-    </span>
-  </div>
-  <button id="anno-dismiss" aria-label="Dismiss announcement">×</button>
+<!-- Announcement Bar -->
+<div class="announcement-bar" role="banner">
+  <p class="announcement-bar__text">
+    Fresh Fish Battered to Order &nbsp;&middot;&nbsp; Free Delivery Over £15 (Under 3 Miles) &nbsp;&middot;&nbsp; Open Mon–Sat 12pm–9pm
+  </p>
+  <button class="announcement-bar__dismiss" aria-label="Dismiss announcement">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+      <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
+    </svg>
+  </button>
 </div>
 
-<!-- ── Navigation ───────────────────────────────────────────────── -->
-<header id="navbar">
+<!-- Navigation -->
+<nav class="site-nav bar-visible" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-
-    <a class="nav-logo" href="index.html" aria-label="Heywood Chippy – Home">
-      <img src="images/Picture3-removebg-preview.png" alt="Heywood Chippy" width="120" height="46">
+    <a href="index.html" class="nav-logo" aria-label="Heywood Chippy home">
+      <img src="images/Adobe Express - file.png" alt="Heywood Chippy" width="120" height="48">
     </a>
 
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html"   class="nav-link active">Home</a>
-      <a href="about.html"   class="nav-link">About</a>
-      <a href="menu.html"    class="nav-link">Menu</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
 
-    <div class="nav-right">
-      <a href="tel:01706627702" class="nav-cta">
-        <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-        Call to Order
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
+    <a href="tel:01706627702" class="nav-cta phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+      <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+      Call to Order
+    </a>
+
+    <div class="nav-mobile-wrap">
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
       </button>
-    </div>
-
-  </div>
-</header>
-
-<!-- ── Mobile Menu ───────────────────────────────────────────────── -->
-<nav id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="index.html"   class="mobile-nav-link active">Home</a>
-  <a href="about.html"   class="mobile-nav-link">About</a>
-  <a href="menu.html"    class="mobile-nav-link">Menu</a>
-  <a href="contact.html" class="mobile-nav-link">Contact</a>
-  <div class="mobile-menu-footer">
-    <div class="mobile-menu-info">
-      <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-      <a href="tel:01706627702">01706 627702</a>
-    </div>
-    <div class="mobile-menu-info">
-      <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>
-      2 Wham Street, Heywood
-    </div>
-    <div class="mobile-menu-info">
-      <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
-      Mon–Sat: 12pm – 9:00pm
+      <nav class="mobile-nav-bubble" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </div>
 </nav>
-<div id="mobile-overlay" aria-hidden="true"></div>
 
-<main>
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
+<section class="hero" id="hero" aria-label="Hero section">
+  <!-- &&& IMAGE 1 · HERO BACKGROUND · subject: classic British fish & chips · size: 1920×1080 (16:9, landscape) · loads eager. To change: replace the photo ID in the url() below. Swap from https://unsplash.com/s/photos/fish-and-chips -->
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1579208030886-b937da0925dc?w=1920&q=80&auto=format&fit=crop');" role="img" aria-label="Classic British fish and chips"></div>
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-  <!-- ── Section 1: Hero ────────────────────────────────────────── -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero-bg" aria-hidden="true"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Heywood, Greater Manchester</p>
+    <h1 class="hero-title">Proper British Fish &amp; Chips.</h1>
+    <p class="hero-sub">Made fresh. Battered to order. Served with pride.</p>
 
-    <div class="hero-content">
-      <p class="hero-eyebrow">Heywood, Greater Manchester</p>
-
-      <h1>Proper British<br>Fish &amp; Chips.</h1>
-
-      <p class="hero-sub">Made fresh. Battered to order. Served with pride.</p>
-
-      <div class="hero-cta-group">
-        <a href="menu.html" class="btn btn-gold btn-lg">
+    <div class="hero-actions">
+      <div class="btn-magnetic">
+        <a href="menu.html" class="btn btn-primary">
           View Our Menu
-        </a>
-        <a href="tel:01706627702" class="btn btn-outline btn-lg">
-          <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-          Call to Order
+          <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg>
         </a>
       </div>
-
-      <div class="hero-rating">
-        <div class="hero-stars" aria-label="5 stars">
-          <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-          <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-          <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-          <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-          <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-        </div>
-        <span class="hero-rating-label">Loved by Heywood</span>
-      </div>
-    </div>
-
-    <div class="scroll-indicator" aria-hidden="true">
-      <span>Scroll</span>
-      <svg class="icon"><use href="#icon-chevron-down"/></svg>
-    </div>
-  </section>
-
-  <!-- ── Section 2: Stats Bar ───────────────────────────────────── -->
-  <section class="stats-bar" aria-label="At a glance">
-    <div class="container">
-      <div class="stats-grid">
-
-        <div class="stat-item" data-reveal>
-          <div class="stat-icon-wrap" aria-hidden="true">
-            <svg class="icon"><use href="#icon-fish"/></svg>
-          </div>
-          <span class="stat-value">Fresh</span>
-          <span class="stat-label">Fish Daily</span>
-          <span class="stat-sub">Battered to order, every time</span>
-        </div>
-
-        <div class="stat-item" data-reveal data-reveal-delay="100">
-          <div class="stat-icon-wrap" aria-hidden="true">
-            <svg class="icon"><use href="#icon-phone"/></svg>
-          </div>
-          <span class="stat-value">Phone</span>
-          <span class="stat-label">Order by Call</span>
-          <span class="stat-sub">01706 627702</span>
-        </div>
-
-        <div class="stat-item" data-reveal data-reveal-delay="200">
-          <div class="stat-icon-wrap" aria-hidden="true">
-            <svg class="icon"><use href="#icon-clock"/></svg>
-          </div>
-          <span class="stat-value">6 Days</span>
-          <span class="stat-label">Open a Week</span>
-          <span class="stat-sub">12pm – 9pm · Closed Sunday</span>
-        </div>
-
-        <div class="stat-item" data-reveal data-reveal-delay="300">
-          <div class="stat-icon-wrap" aria-hidden="true">
-            <svg class="icon"><use href="#icon-van"/></svg>
-          </div>
-          <span class="stat-value">Free</span>
-          <span class="stat-label">Local Delivery</span>
-          <span class="stat-sub">Under 3 miles on orders over £15</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Section 3: Customer Favourites ────────────────────────── -->
-  <section class="favourites-section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal>From the Menu</p>
-        <h2 class="section-title" data-reveal data-reveal-delay="100">Customer Favourites</h2>
-        <p class="section-sub" data-reveal data-reveal-delay="200">Freshly made, every single time.</p>
-      </div>
-
-      <div class="favourites-grid">
-
-        <!-- Card 1: Fish & Chips -->
-        <article class="feat-card" data-reveal>
-          <div class="feat-img">
-            <img src="images/meelan-bawjee-A_tPBct4tz8-unsplash.jpg"
-                 alt="Golden battered fish with thick-cut chips"
-                 loading="lazy"
-                 width="600" height="400">
-            <div class="feat-img-overlay" aria-hidden="true"></div>
-            <span class="feat-cat">Fish</span>
-          </div>
-          <div class="feat-body">
-            <h3>Fish &amp; Chips</h3>
-            <p class="feat-desc">Fresh cod in crispy golden batter with thick-cut chips — the Heywood staple done right.</p>
-            <div class="feat-footer">
-              <span class="feat-price">£6.00</span>
-              <a href="menu.html#cat-fish" class="feat-link">
-                See on menu
-                <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 2: Salt & Pepper -->
-        <article class="feat-card" data-reveal data-reveal-delay="100">
-          <div class="feat-img">
-            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=80&auto=format&fit=crop"
-                 alt="Crispy salt and pepper chicken with chips"
-                 loading="lazy"
-                 width="800" height="533">
-            <div class="feat-img-overlay" aria-hidden="true"></div>
-            <span class="feat-cat">Salt &amp; Pepper</span>
-          </div>
-          <div class="feat-body">
-            <h3>Salt &amp; Pepper Chicken</h3>
-            <p class="feat-desc">Our signature spice mix with peas, curry or gravy — bold flavour, every single time.</p>
-            <div class="feat-footer">
-              <span class="feat-price">£5.50</span>
-              <a href="menu.html#cat-saltpepper" class="feat-link">
-                See on menu
-                <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 3: Big Special Offer -->
-        <article class="feat-card" data-reveal data-reveal-delay="200">
-          <div class="feat-img">
-            <img src="images/family.jpg"
-                 alt="Big Special Offer family feast with fish, chips and Pepsi"
-                 loading="lazy"
-                 width="600" height="400">
-            <div class="feat-img-overlay" aria-hidden="true"></div>
-            <span class="feat-badge">Best Value</span>
-            <span class="feat-cat">Special</span>
-          </div>
-          <div class="feat-body">
-            <h3>Big Special Offer</h3>
-            <p class="feat-desc">4× Fish · 2× Large Chips · any 3 sauces · 1.5L Pepsi — the whole family sorted.</p>
-            <div class="feat-footer">
-              <span class="feat-price">£25.00</span>
-              <a href="menu.html#cat-special" class="feat-link">
-                See on menu
-                <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="favourites-cta" data-reveal>
-        <a href="menu.html" class="btn btn-gold btn-lg">See Full Menu</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Section 4: Why Us ──────────────────────────────────────── -->
-  <section class="why-section grain" aria-labelledby="why-heading">
-    <div class="container">
-      <div class="section-head centered">
-        <p class="eyebrow" data-reveal>Why Heywood Chippy</p>
-        <h2 class="section-title" id="why-heading" data-reveal data-reveal-delay="100">Proper Food. Proper Pride.</h2>
-      </div>
-
-      <div class="why-grid">
-
-        <div class="why-card" data-reveal>
-          <div class="why-icon" aria-hidden="true">
-            <svg class="icon"><use href="#icon-fish"/></svg>
-          </div>
-          <h3>Fresh Daily</h3>
-          <p>Our fish is sourced fresh and battered to order. Never frozen, never kept under a lamp.</p>
-        </div>
-
-        <div class="why-card" data-reveal data-reveal-delay="100">
-          <div class="why-icon" aria-hidden="true">
-            <svg class="icon"><use href="#icon-pin"/></svg>
-          </div>
-          <h3>Local at Heart</h3>
-          <p>Not a chain, not a franchise. A proper Heywood business that genuinely cares about its community.</p>
-        </div>
-
-        <div class="why-card" data-reveal data-reveal-delay="200">
-          <div class="why-icon" aria-hidden="true">
-            <svg class="icon"><use href="#icon-flame"/></svg>
-          </div>
-          <h3>Made to Order</h3>
-          <p>Nothing sits waiting. Every single portion is cooked fresh when you ask for it.</p>
-        </div>
-
-        <div class="why-card" data-reveal data-reveal-delay="300">
-          <div class="why-icon" aria-hidden="true">
-            <svg class="icon"><use href="#icon-pound"/></svg>
-          </div>
-          <h3>Honest Prices</h3>
-          <p>Real portions at fair prices. Cheapest in store, and free local delivery over £15.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Section 5: About Teaser ───────────────────────────────── -->
-  <section class="about-teaser" aria-label="About Heywood Chippy">
-    <div class="about-teaser-bg" aria-hidden="true"></div>
-    <div class="about-teaser-overlay" aria-hidden="true"></div>
-
-    <div class="about-teaser-content">
-      <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-
-      <blockquote data-reveal>
-        We know our customers by name. That's what being a local chippy is all about.
-      </blockquote>
-
-      <cite data-reveal data-reveal-delay="100">— Heywood Chippy</cite>
-
-      <div data-reveal data-reveal-delay="200">
-        <a href="about.html" class="btn btn-outline btn-lg">
-          Our Story
-          <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Section 6: Reviews ────────────────────────────────────── -->
-  <section class="reviews-section" aria-labelledby="reviews-heading">
-    <div class="container">
-      <div class="section-head centered">
-        <p class="eyebrow" data-reveal>Google Reviews</p>
-        <h2 class="section-title" id="reviews-heading" data-reveal data-reveal-delay="100">What Heywood Says</h2>
-      </div>
-
-      <div class="reviews-grid">
-
-        <!-- REPLACE WITH REAL REVIEW -->
-        <article class="review-card" data-reveal>
-          <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-          </div>
-          <p class="review-text">"Best fish and chips in the area, hands down. The batter is always crispy and the fish is proper fresh. Been coming here for years and it never disappoints."</p>
-          <p class="review-author">Sarah M.</p>
-          <p class="review-source">via Google</p>
-        </article>
-
-        <!-- REPLACE WITH REAL REVIEW -->
-        <article class="review-card" data-reveal data-reveal-delay="100">
-          <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-          </div>
-          <p class="review-text">"Ordered the Big Special Offer for the family — incredible value. The kids absolutely loved it and there was plenty to go around. Will definitely be back."</p>
-          <p class="review-author">James T.</p>
-          <p class="review-source">via Google</p>
-        </article>
-
-        <!-- REPLACE WITH REAL REVIEW -->
-        <article class="review-card" data-reveal data-reveal-delay="200">
-          <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-            <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
-          </div>
-          <p class="review-text">"Friendly staff, generous portions, and everything cooked fresh to order. A proper local chippy doing it the right way. Exactly what Heywood needs."</p>
-          <p class="review-author">Lisa K.</p>
-          <p class="review-source">via Google</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Section 7: Order CTA ───────────────────────────────────── -->
-  <section class="order-cta-section" aria-labelledby="cta-heading">
-    <div class="container">
-      <h2 id="cta-heading" data-reveal>Ready to Order?</h2>
-
-      <a href="tel:01706627702" class="order-cta-phone" data-reveal data-reveal-delay="100">
-        01706 627702
+      <a href="tel:01706627702" class="btn btn-outline phone-link" aria-label="Call 01706 627702">
+        <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+        Call to Order
       </a>
-
-      <div class="order-cta-buttons" data-reveal data-reveal-delay="200">
-        <a href="tel:01706627702" class="btn btn-gold btn-lg">
-          <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-          Call Now
-        </a>
-        <a href="https://wa.me/441706627702?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order"
-           class="btn btn-whatsapp btn-lg"
-           target="_blank" rel="noopener noreferrer">
-          <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-          Order via WhatsApp
-        </a>
-      </div>
-
-      <p class="order-cta-note" data-reveal data-reveal-delay="300">
-        All orders taken by phone or in-shop · We don't take online orders
-      </p>
     </div>
-  </section>
 
-</main>
+    <div class="hero-social-proof">
+      <div class="stars" role="img" aria-label="5 stars">
+        <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        <svg aria-hidden="true"><use href="#icon-star"/></svg>
+      </div>
+      <span>Loved by Heywood</span>
+    </div>
+  </div>
 
-<!-- ── Footer ───────────────────────────────────────────────────── -->
-<footer class="site-footer">
+  <a href="#stats" class="hero-scroll-cue" aria-label="Scroll to content">
+    <svg width="24" height="24" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════════════════ -->
+<section class="stats-bar" id="stats" aria-label="Key facts about Heywood Chippy">
   <div class="container">
-    <div class="footer-grid">
+    <div class="stats-grid">
 
-      <!-- Left: Brand -->
-      <div>
-        <span class="footer-logo">Heywood Chippy</span>
-        <p class="footer-tagline">Your local fish &amp; chip shop in the heart of Heywood.</p>
-        <p class="footer-locale">Proudly serving Heywood</p>
+      <div class="stat-block" data-reveal>
+        <div class="stat-icon">
+          <svg aria-hidden="true"><use href="#icon-fish"/></svg>
+        </div>
+        <div class="stat-body">
+          <strong class="stat-label">Fresh Daily</strong>
+          <span class="stat-sub">Fish sourced &amp; battered to order</span>
+        </div>
       </div>
 
-      <!-- Centre: Nav -->
-      <div>
-        <p class="footer-col-heading">Navigate</p>
-        <ul class="footer-nav-list">
-          <li><a href="index.html"   class="footer-nav-link">Home</a></li>
-          <li><a href="about.html"   class="footer-nav-link">About</a></li>
-          <li><a href="menu.html"    class="footer-nav-link">Menu</a></li>
-          <li><a href="contact.html" class="footer-nav-link">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Right: Contact + Hours -->
-      <div>
-        <p class="footer-col-heading">Find Us</p>
-
-        <div class="footer-info-row">
-          <svg class="icon" aria-hidden="true"><use href="#icon-pin"/></svg>
-          <span>2 Wham Street, Heywood, OL10 4QU</span>
+      <div class="stat-block" data-reveal data-reveal-delay="1">
+        <div class="stat-icon">
+          <svg aria-hidden="true"><use href="#icon-phone"/></svg>
         </div>
-
-        <div class="footer-info-row">
-          <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-          <a href="tel:01706627702">01706 627702</a>
-        </div>
-
-        <div class="footer-info-row">
-          <svg class="icon" aria-hidden="true"><use href="#icon-clock"/></svg>
-          <div class="footer-hours-list">
-            <span><strong>Mon – Sat</strong> 12:00pm – 9:00pm</span>
-            <span><strong>Sunday</strong> Closed</span>
-          </div>
-        </div>
-
-        <div style="margin-top: 1rem;">
-          <span data-open-badge aria-live="polite">
-            <span data-dot></span>
-            <span data-text>Open Now</span>
+        <div class="stat-body">
+          <strong class="stat-label">
+            <a href="tel:01706627702" class="phone-link">Order by Phone</a>
+          </strong>
+          <span class="stat-sub">
+            <a href="tel:01706627702" class="phone-link">01706 627702</a>
           </span>
         </div>
       </div>
 
+      <div class="stat-block" data-reveal data-reveal-delay="2">
+        <div class="stat-icon">
+          <svg aria-hidden="true"><use href="#icon-clock"/></svg>
+        </div>
+        <div class="stat-body">
+          <strong class="stat-label">Open 6 Days</strong>
+          <span class="stat-sub">Mon–Sat &nbsp;12pm–9pm</span>
+        </div>
+      </div>
+
+      <div class="stat-block" data-reveal data-reveal-delay="3">
+        <div class="stat-icon">
+          <svg aria-hidden="true"><use href="#icon-van"/></svg>
+        </div>
+        <div class="stat-body">
+          <strong class="stat-label">Free Delivery</strong>
+          <span class="stat-sub">Over £15 within 3 miles</span>
+        </div>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <div class="footer-bottom">
-    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
-      <span class="footer-copy">&copy; 2026 Heywood Chippy. All rights reserved.</span>
-      <span class="footer-since">Proudly serving Heywood</span>
+<!-- ═══════════════════════════════════════════════════════
+     CUSTOMER FAVOURITES
+═══════════════════════════════════════════════════════ -->
+<section class="section favourites" id="favourites" aria-label="Customer favourites">
+  <div class="container">
+
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">Most Ordered</p>
+      <h2 class="section-title">Customer Favourites</h2>
+      <span class="gold-line gold-line--center"></span>
+    </div>
+
+    <div class="favourites-grid tilt-scene">
+
+      <article class="card fav-card tilt" data-reveal data-reveal-delay="1">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="card__image-wrap">
+          <!-- &&& IMAGE 2 · FAVOURITE CARD "Fish & Chips" · subject: crispy battered fish & chips close-up · size: 800×600 (4:3, landscape). To change: replace the photo ID in src below. Pick from https://unsplash.com/s/photos/fish-and-chips -->
+          <img
+            src="https://images.unsplash.com/photo-1576777647209-e8733d7b851d?w=800&q=80&auto=format&fit=crop"
+            alt="Crispy golden battered fish and chips"
+            loading="lazy"
+            width="800" height="600"
+          >
+        </div>
+        <div class="card__body">
+          <span class="card-category">Fish</span>
+          <h3 class="card-name">Fish &amp; Chips</h3>
+          <p class="card-desc">Classic British fish, fresh cod in our signature crispy golden batter, served with chunky chips.</p>
+          <div class="card-footer">
+            <span class="card-price">from £6.00</span>
+            <a href="menu.html#fish" class="card-link" aria-label="View Fish on our menu">
+              <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card fav-card tilt" data-reveal data-reveal-delay="2">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="card__image-wrap">
+          <!-- &&& IMAGE 3 · FAVOURITE CARD "Family Feast" · subject: large sharing platter of fish & chips · size: 800×600 (4:3, landscape). To change: replace the photo ID in src below. Pick from https://unsplash.com/s/photos/fish-and-chips -->
+          <img
+            src="https://images.unsplash.com/photo-1580217593608-61931cefc821?w=800&q=80&auto=format&fit=crop"
+            alt="Large sharing platter of fish and chips"
+            loading="lazy"
+            width="800" height="600"
+          >
+        </div>
+        <div class="card__body">
+          <span class="card-category">Specials</span>
+          <h3 class="card-name">Family Feast</h3>
+          <p class="card-desc">Four fish, two large chips, any three sauces and a 1.5ltr Pepsi. The ultimate chippy night in.</p>
+          <div class="card-footer">
+            <span class="card-price">£25.00</span>
+            <a href="menu.html#specials" class="card-link" aria-label="View Family Feast on our menu">
+              <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card fav-card tilt" data-reveal data-reveal-delay="3">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="card__image-wrap">
+          <!-- &&& IMAGE 4 · FAVOURITE CARD "Shashlik Deal" · subject: doner / mixed kebab on naan bread · size: 800×600 (4:3, landscape). To change: replace the photo ID in src below. Pick from https://unsplash.com/s/photos/doner-kebab -->
+          <img
+            src="https://images.unsplash.com/photo-1633321702518-7feccafb94d5?w=800&q=80&auto=format&fit=crop"
+            alt="Mixed kebab on naan bread"
+            loading="lazy"
+            width="800" height="600"
+          >
+        </div>
+        <div class="card__body">
+          <span class="card-category">Kebabs</span>
+          <h3 class="card-name">Shashlik Deal</h3>
+          <p class="card-desc">Mix kebab shashlik on naan, cone chips, a 330ml drink and a free dip. Hard to beat.</p>
+          <div class="card-footer">
+            <span class="card-price">£9.85</span>
+            <a href="menu.html#kebabs" class="card-link" aria-label="View Shashlik Deal on our menu">
+              <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="favourites-cta" data-reveal>
+      <a href="menu.html" class="btn btn-outline-gold">
+        See Full Menu
+        <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     WHY US
+═══════════════════════════════════════════════════════ -->
+<section class="section why-us grain-overlay" id="why-us" aria-label="Why choose Heywood Chippy">
+  <div class="container" style="position:relative;z-index:2;">
+
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">Why Heywood Chippy</p>
+      <h2 class="section-title">Not a Chain. Not a Franchise.</h2>
+      <span class="gold-line gold-line--center"></span>
+    </div>
+
+    <div class="why-grid tilt-scene">
+
+      <div class="why-item tilt" data-reveal data-reveal-delay="1">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="value-icon">
+          <svg aria-hidden="true"><use href="#icon-fish"/></svg>
+        </div>
+        <h3 class="why-title">Fresh Daily</h3>
+        <p class="why-body">Fish sourced fresh every morning, battered to order when you arrive. We've never served anything frozen and we never will.</p>
+      </div>
+
+      <div class="why-item tilt" data-reveal data-reveal-delay="2">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="value-icon">
+          <svg aria-hidden="true"><use href="#icon-pin"/></svg>
+        </div>
+        <h3 class="why-title">Local at Heart</h3>
+        <p class="why-body">Not a chain, not a franchise, a real Heywood business. We've grown up in this community and we care about every order we send out.</p>
+      </div>
+
+      <div class="why-item tilt" data-reveal data-reveal-delay="3">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="value-icon">
+          <svg aria-hidden="true"><use href="#icon-flame"/></svg>
+        </div>
+        <h3 class="why-title">Made to Order</h3>
+        <p class="why-body">Nothing sits under a lamp waiting. When you order, we cook. That's the difference between a good chippy and a great one.</p>
+      </div>
+
+      <div class="why-item tilt" data-reveal data-reveal-delay="4">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="value-icon">
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        </div>
+        <h3 class="why-title">Honest Prices</h3>
+        <p class="why-body">Real portions at fair prices. No hidden charges, no gimmicks. Just proper food cooked properly, every single time.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ABOUT TEASER
+═══════════════════════════════════════════════════════ -->
+<section class="about-teaser" id="about-teaser" aria-label="About Heywood Chippy">
+  <!-- &&& IMAGE 5 · ABOUT TEASER BACKGROUND · subject: moody, dark fish & chips (heavy overlay applied) · size: 1600×900 (16:9, landscape). To change: replace the photo ID in url() below. Pick from https://unsplash.com/s/photos/fish-and-chips -->
+  <div class="about-teaser__bg" style="background-image: url('https://images.unsplash.com/photo-1611599538235-128e54f1250f?w=1600&q=80&auto=format&fit=crop');" role="img" aria-label="Moody fish and chips"></div>
+  <div class="about-teaser__overlay" aria-hidden="true"></div>
+  <div class="about-teaser__content container" data-reveal>
+    <div class="pull-quote">
+      <span class="pull-quote__mark" aria-hidden="true">&ldquo;</span>
+      <blockquote class="pull-quote__text">Our customers are family! That&rsquo;s what being a local chippy is all about.</blockquote>
+      <p class="pull-quote__attr">Heywood Chippy</p>
+    </div>
+    <a href="about.html" class="btn btn-outline-gold" style="margin-top:var(--sp-10);">
+      Our Story
+      <svg aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     REVIEWS
+═══════════════════════════════════════════════════════ -->
+<section class="section reviews" id="reviews" aria-label="Customer reviews">
+  <div class="container">
+
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">Customer Reviews</p>
+      <h2 class="section-title">What Heywood Says</h2>
+      <span class="gold-line gold-line--center"></span>
+    </div>
+
+    <div class="reviews-grid tilt-scene">
+
+      <article class="review-card tilt" data-reveal data-reveal-delay="1">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="stars" role="img" aria-label="5 stars">
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        </div>
+        <!-- REAL CONTENT NEEDED: paste real Google review here -->
+        <blockquote class="review-text">"Best chippy in Heywood by a mile. Always fresh, always hot, and the portions are massive. I've been coming here for years and they've never let me down."</blockquote>
+        <footer class="review-footer">
+          <strong class="review-name">Sarah T.</strong>
+          <span class="review-source">via Google</span>
+        </footer>
+      </article>
+
+      <article class="review-card tilt" data-reveal data-reveal-delay="2">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="stars" role="img" aria-label="5 stars">
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        </div>
+        <!-- REAL CONTENT NEEDED: paste real Google review here -->
+        <blockquote class="review-text">"Ordered the Family Feast and it was absolutely spot on. Fish was crispy, chips were golden, and the curry sauce was perfect. Friendly staff too. Will definitely be back."</blockquote>
+        <footer class="review-footer">
+          <strong class="review-name">Mark D.</strong>
+          <span class="review-source">via Google</span>
+        </footer>
+      </article>
+
+      <article class="review-card tilt" data-reveal data-reveal-delay="3">
+        <span class="tilt__glare" aria-hidden="true"></span>
+        <div class="stars" role="img" aria-label="5 stars">
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+          <svg aria-hidden="true"><use href="#icon-star"/></svg>
+        </div>
+        <!-- REAL CONTENT NEEDED: paste real Google review here -->
+        <blockquote class="review-text">"Proper Northern chippy. The batter is light and the fish tastes genuinely fresh. Tried loads of chippies around Heywood and this is the one we keep coming back to."</blockquote>
+        <footer class="review-footer">
+          <strong class="review-name">Claire B.</strong>
+          <span class="review-source">via Google</span>
+        </footer>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ORDER HUB — direct (cheapest) + delivery platforms
+═══════════════════════════════════════════════════════ -->
+<section class="order-hub" id="order-online" aria-label="How to order">
+  <div class="container">
+
+    <div class="order-hub__head" data-reveal>
+      <p class="section-eyebrow">How to Order</p>
+      <h2 class="section-title">Order Direct for the Best Price</h2>
+      <span class="gold-line gold-line--center"></span>
+    </div>
+
+    <!-- BIG direct-order card -->
+    <div class="direct-order" data-reveal>
+      <span class="direct-order__badge">
+        <svg width="14" height="14" aria-hidden="true"><use href="#icon-tag"/></svg>
+        Cheapest Prices
+      </span>
+      <h2 class="direct-order__title">Skip the Apps &mdash; <em>Order Direct</em></h2>
+      <p class="direct-order__sub">App fees push prices up. Call the shop directly and you&rsquo;ll always pay the lowest price &mdash; straight to the people cooking your food.</p>
+      <span class="direct-order__deliver">
+        <svg aria-hidden="true"><use href="#icon-van"/></svg>
+        We deliver too &mdash; free over £15 within 3 miles
+      </span>
+      <a href="tel:01706627702" class="direct-order__phone phone-link" aria-label="Call 01706 627702">01706 627702</a>
+      <div class="btn-magnetic">
+        <a href="tel:01706627702" class="btn btn-primary direct-order__cta phone-link" aria-label="Call to order direct now">
+          <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+          Call to Order Direct
+        </a>
+      </div>
+      <!-- WhatsApp ordering will be added here later — for now this routes to a phone call. -->
+      <p class="direct-order__note"><strong>WhatsApp ordering coming soon</strong> &nbsp;&middot;&nbsp; for now, give us a ring</p>
+    </div>
+
+    <!-- Delivery platforms — order: OrderYOYO, Just Eat, Uber Eats, Deliveroo.
+         OWNER: the URLs are set ONCE in global.js (PLATFORM_URLS). No need to edit hrefs here. -->
+    <p class="platforms-label" data-reveal>Prefer an app? We&rsquo;re on all four</p>
+    <div class="platforms" data-reveal>
+
+      <a href="#" data-platform="orderyoyo" class="platform-btn platform-btn--orderyoyo" aria-label="Order on OrderYOYO — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/OYYLogo.png" alt="OrderYOYO" loading="lazy" width="200" height="112">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection</span>
+      </a>
+
+      <a href="#" data-platform="justeat" class="platform-btn platform-btn--justeat" aria-label="Order on Just Eat — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/JELogo.png" alt="Just Eat" loading="lazy" width="120" height="120">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection</span>
+      </a>
+
+      <a href="#" data-platform="ubereats" class="platform-btn platform-btn--ubereats" aria-label="Order on Uber Eats — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/UberEatsLogo.png" alt="Uber Eats" loading="lazy" width="120" height="120">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection coming soon</span>
+      </a>
+
+      <a href="#" data-platform="deliveroo" class="platform-btn platform-btn--deliveroo" aria-label="Order on Deliveroo — delivery and collection">
+        <span class="platform-btn__logo-tile">
+          <img src="Logo/DeliverooLogo.png" alt="Deliveroo" loading="lazy" width="200" height="112">
+        </span>
+        <span class="platform-btn__sub">Delivery &amp; Collection coming soon</span>
+      </a>
+
+    </div>
+
+    <p class="order-hub__match" data-reveal>In-store prices match collection prices on every platform.</p>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ORDER CTA
+═══════════════════════════════════════════════════════ -->
+<section class="order-cta" id="order" aria-label="Place an order">
+  <div class="order-cta__bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="order-cta__inner" data-reveal>
+      <p class="section-eyebrow">Ready When You Are</p>
+      <h2 class="order-cta__title">Ready to Order?</h2>
+      <a href="tel:01706627702" class="order-cta__phone phone-link" aria-label="Call us to order on 01706 627702">
+        01706 627702
+      </a>
+      <a href="tel:01706627702" class="btn btn-primary order-cta__btn phone-link" aria-label="Call to order now">
+        <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+        Call to Order Now
+      </a>
+      <p class="order-cta__note">Call or pop in for the best price &nbsp;&middot;&nbsp; or order through the apps above</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Col 1: Brand -->
+      <div class="footer-col">
+        <a href="index.html" class="footer-logo" aria-label="Heywood Chippy home">
+          <img src="images/Adobe Express - file.png" alt="Heywood Chippy" width="110" height="44" loading="lazy">
+        </a>
+        <p class="footer-tagline">Proper British Fish &amp; Chips</p>
+        <p class="footer-sub">Proudly serving Heywood</p>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div class="footer-col">
+        <p class="footer-col-title">Navigate</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="menu.html">Our Menu</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div class="footer-col">
+        <p class="footer-col-title">Find Us</p>
+        <div class="footer-info">
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-pin"/></svg>
+            <span>2 Wham Street<br>Heywood, OL10 4QU</span>
+          </div>
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-phone"/></svg>
+            <a href="tel:01706627702" class="phone-link" aria-label="Call 01706 627702">01706 627702</a>
+          </div>
+          <div class="footer-info-row">
+            <svg aria-hidden="true" width="16" height="16"><use href="#icon-clock"/></svg>
+            <div class="footer-hours">
+              <span>Mon–Sat &nbsp;12:00pm–9:00pm</span>
+              <span>Sunday - Closed</span>
+              <span data-live-badge aria-live="polite"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="footer-year"></span> Heywood Chippy. All rights reserved.</span>
+      <span>Proudly serving Heywood</span>
     </div>
   </div>
 </footer>
 
-<!-- ── Sticky Mobile CTA Bar ─────────────────────────────────────── -->
-<div id="mobile-cta-bar" aria-label="Quick contact">
-  <a href="tel:01706627702" class="btn btn-gold">
-    <svg class="icon" aria-hidden="true"><use href="#icon-phone"/></svg>
-    Call to Order
-  </a>
-  <a href="https://wa.me/441706627702?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order"
-     class="btn btn-whatsapp"
-     target="_blank" rel="noopener noreferrer">
-    <svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
-    WhatsApp
+<!-- Mobile CTA Bar -->
+<div class="mobile-cta-bar" role="complementary" aria-label="Call to order">
+  <a href="tel:01706627702" class="mobile-cta-btn phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+    <span class="mobile-cta-pulse" aria-hidden="true"><i></i></span>
+    <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+    Call to Order &nbsp;&middot;&nbsp; 01706 627702
   </a>
 </div>
 
-<!-- ── Back to Top ───────────────────────────────────────────────── -->
-<button id="back-to-top" aria-label="Back to top">
-  <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down" style="transform:rotate(180deg)"/></svg>
-</button>
+<!-- Desktop floating call button -->
+<a href="tel:01706627702" class="call-fab phone-link" aria-label="Call Heywood Chippy on 01706 627702">
+  <span class="call-fab__ring" aria-hidden="true"></span>
+  <svg aria-hidden="true"><use href="#icon-phone"/></svg>
+  Call to Order
+</a>
 
-<!-- ── Scripts ───────────────────────────────────────────────────── -->
-<script src="js/config.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script src="js/global.js" defer></script>
+<script src="js/effects.js" defer></script>
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
