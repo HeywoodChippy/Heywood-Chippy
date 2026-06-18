@@ -15,7 +15,7 @@ const PLATFORM_URLS = {
   orderyoyo: 'https://heywoodchippy.orderyoyo.co.uk/',   /* OWNER: your OrderYOYO link  */
   justeat:   'https://www.just-eat.co.uk/restaurants-heywood-chippy-heywood/menu',   /* OWNER: your Just Eat link   */
   ubereats:  '',   /* OWNER: your Uber Eats link  */
-  deliveroo: ''    /* OWNER: your Deliveroo link  */
+  deliveroo: 'https://deliveroo.co.uk/menu/manchester/heywood/heywood-chippy-2-wham-street/'    /* OWNER: your Deliveroo link  */
 };
 
 function initPlatformLinks() {
